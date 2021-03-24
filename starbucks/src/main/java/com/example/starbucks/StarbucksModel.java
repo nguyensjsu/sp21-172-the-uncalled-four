@@ -6,9 +6,8 @@ import lombok.RequiredArgsConstructor;
 @Data
 class StarbucksModel {
 
-    private String modelNumber ;
-    private String serialNumber ;
-    private Integer ordersCount ;
+    private String location;
+    private String branch;
     
 }
 
