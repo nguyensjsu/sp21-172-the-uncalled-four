@@ -1,0 +1,35 @@
+.title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color:black;
+}
+body{
+    align-self: center;
+    background-size: 100% 100%;
+    align-self: center;
+    font-size: 18px;
+    line-height: 1.6em;
+}
+.register-container{
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+.box-1{
+
+
+}
+.image-container{
+    background-image: url('../../static/images/starbucks-reserverd.png');
+    width: 330px;
+    height: 340px;
+    background-size: 330px 340px;
+    background-repeat: no-repeat;
+    margin: auto;
+
+}
