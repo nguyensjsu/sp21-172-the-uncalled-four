@@ -98,48 +98,114 @@ body{
     justify-content: center;
     align-items: center;
 }
-#info-content{
+.menu-container{
+    width: 80%;
+    margin: auto;
+    border: 1px solid #DBDBDB;
+    background-color:white;
+    align-items: flex-start;
+}
+#menu-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     margin-top: 20px;
+    justify-content: flex-start;
 }
-.get-mobile-app-info{
-    background-color: #344A45;
-   
+.menu-title {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    background-color: white ;
+    font-size: 22px;
 }
-.mobile-app-info{
-    width: 40%;
-    color: white;
-    margin-left: 30px;
+#menu-title {
+
 }
-.app-info-title{
-    font-size: 34px;
+.title{
+    width: 100%;
+    margin: auto;
+    border-bottom: 5px solid #439058;
 }
-.app-info-details{
-    font-size: 24px;
-}
-.app-download-link{
-    font-size: 24px;
-    color: white;
-    background-color: black;
-    text-decoration: none;
-    height: 50px;
-    width: 200px;
+#title{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
-    border-radius: 30px;
-    margin-left: 20%;
 }
-.mobile-app-image{
-    background-image: url('../images/app_image.png');
-    width: 300px;
-    height: 300px;
-    background-size: 300px 300px;
-    background-repeat: no-repeat;
-    border: 0px;
+ul {
+    list-style-type: none;
+    font-size: 20px;
+}
+.register-container {
+    width: 70%;
+    margin: auto;
+}
+#register-container{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.register {
+    width: 98%;
+    margin: auto;
+    border: 1px solid #dbdbdb;
+}
+#register{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 
-
+.orders {
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+    border: 1px solid #dbdbdb;
+}
+#orders{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.payment {
+    width: 100%;
+    margin: auto;
+    border: 1px solid #dbdbdb;
+}
+#payment{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.payment-selection {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    margin: auto;
+    border: 1px solid #dbdbdb;
+}
+#payment-selection {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.card{
+    width: 100px;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+}
+#card {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}

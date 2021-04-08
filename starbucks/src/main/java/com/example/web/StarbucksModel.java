@@ -1,4 +1,4 @@
-package com.example.starbucks;
+package com.example.web;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

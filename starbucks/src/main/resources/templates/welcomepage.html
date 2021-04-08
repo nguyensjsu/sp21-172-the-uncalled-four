@@ -6,7 +6,7 @@
 
 <head>
     <title>Login to Starbuckss</title>
-    <link rel="stylesheet" href="css/welcomepage.css">
+    <link rel="stylesheet" th:href="@{css/welcomepage.css}" />
     </style>
 </head>
 <body>
@@ -14,16 +14,16 @@
         <div class="starbucks-logo"> </div>
         <div class="top-tabs">
             <ul class="nav-item">
-                <a class="nav-link" href="./menu.html">Menu  </a>
-                <a class="nav-link" href="./starbucksreward.html">Rewards  </a>
-                <a class="nav-link" href="./starbuckscard.html">Gift Cards  </a>
+                <a class="nav-link" th:href="@{/menu}" >Menu  </a>
+                <a class="nav-link" th:href="@{/starbucksreward}" >Rewards  </a>
+                <a class="nav-link" th:href="@{/starbuckscard}">Gift Cards  </a>
             </ul>
         </div>
         <div class="right-tabs">
             <ul class="nav-item">
                 <img class="location-logo"></img>
-                <a class="find-store" href="./map.html">Find a Store  </a>
-                <a class="oval-button-black" href="./starbucks.html">Order Now  </a>
+                <a class="find-store" th:href="@{/map}">Find a Store  </a>
+                <a class="oval-button-black" th:href="@{/starbucks}" >Order Now  </a>
             </ul>
         </div>
     </div>
@@ -47,13 +47,8 @@
             <a class="app-download-link" href="https://apps.apple.com/us/app/starbucks/id331177714">Get the app & join  </a>
         </div>
         <div class="mobile-app-image">
-
         </div>
     </div>
-
-
-
-
 </body>
 
 </html>

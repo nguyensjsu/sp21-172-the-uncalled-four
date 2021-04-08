@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+<html>
+
+<head>
+    <title>Starbucks Menu</title>
+    <link rel="stylesheet" href="css/menu.css">
+    </style>
+</head>
+
+<body>
+    <div class="top-container">
+        <div class="starbucks-logo"> </div>
+        <div class="top-tabs">
+            <ul class="nav-item">
+                <a class="nav-link" th:href="@{/menu}">Menu </a>
+                <a class="nav-link" th:href="@{/starbucksreward}">Rewards </a>
+                <a class="nav-link" th:href="@{/starbuckscard}">Gift Cards </a>
+            </ul>
+        </div>
+        <div class="right-tabs">
+            <ul class="nav-item">
+                <img class="location-logo"></img>
+                <a class="find-store" th:href="@{/map}">Find a Store </a>
+            </ul>
+        </div>
+    </div>
+    <div class="safety-guidelines-covid">
+        <div class="guidelines">
+            <p>
+                We require facial coverings in all stores to protect the health of our customers and
+                partners(employees), and
+                help stop the spread of COVID-19.
+                <a href="https://www.cdc.gov/coronavirus/2019-ncov/communication/guidance.html"> Learn More. </a>
+            </p>
+        </div>
+    </div>
+    <div class="menu-container" id="menu-container">
+
+        <div class="menu-title" id="menu-title">
+            <div class="title" id="title">
+                <h2>Espresso</h2>
+            </div>
+            <div class="menu-list" id="menu-list">
+                <ul th:each="espresso : ${espressos}">
+                    <li th:text="${espresso}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-title" id="menu-title">
+            <div class="title" id="title">
+                <h2>Teas and Coffees</h2>
+            </div>
+
+            <div class="menu-list" id="menu-list">
+                <ul th:each="drink : ${teas_and_coffees}">
+                    <li th:text="${drink}"></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="menu-title" id="menu-title">
+            <div class="title" id="title">
+                <h2>Frapuccino</h2>
+            </div>
+            <div class="menu-list" id="menu-list">
+                <ul th:each="frapuccino : ${frapuccinos}">
+                    <li th:text="${frapuccino}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="register-container" id="register-container">
+        <div>
+            <h2>Check Out</h2>
+        </div>
+
+
+        <div class="register" id="register">
+            <div class="orders" id="orders">
+                <h3>Your Orders</h3>
+                <div class="payment-selection">
+
+                </div>
+            </div>
+            <div class="payment" id="payment">
+                <h3> Select Payment</h3>
+                <div class="payment-selection">
+                    <div class=card id="card">
+                        <h3>Card</h3>
+                    </div>
+                    <div class=card id="card">
+                        <h3>Reward</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
