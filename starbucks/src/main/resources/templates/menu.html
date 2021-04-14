@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="top-container">
         <div class="starbucks-logo"> </div>
         <div class="top-tabs">
@@ -44,35 +45,37 @@
                 <h2>Espresso</h2>
             </div>
             <div class="menu-list" id="menu-list">
-                <ul th:each="espresso : ${espressos}">
-                    <li th:text="${espresso}"></li>
-                </ul>
+                <div th:each="drink : ${hot_coffee}">
+                    <input name="drinks" type="checkbox" th:value="${drink.id}" />
+                    <span th:text="${drink.name}"></span><br />
+                </div>
             </div>
         </div>
+
+
         <div class="menu-title" id="menu-title">
             <div class="title" id="title">
                 <h2>Teas and Coffees</h2>
             </div>
-
             <div class="menu-list" id="menu-list">
-                <ul th:each="drink : ${teas_and_coffees}">
-                    <li th:text="${drink}"></li>
-                </ul>
+                <div th:each="drink : ${cold_coffee}">
+                    <input name="drinks" type="checkbox" th:value="${drink.id}" />
+                    <span th:text="${drink.name}"></span><br />
+                </div>
             </div>
-
         </div>
         <div class="menu-title" id="menu-title">
             <div class="title" id="title">
                 <h2>Frapuccino</h2>
             </div>
             <div class="menu-list" id="menu-list">
-                <ul th:each="frapuccino : ${frapuccinos}">
-                    <li th:text="${frapuccino}"></li>
-                </ul>
+                <div th:each="drink : ${frapuccino}">
+                    <input name="drinks" type="checkbox" th:value="${drink.id}" />
+                    <span th:text="${drink.name}"></span><br />
+                </div>
             </div>
         </div>
     </div>
-
 
     <div class="register-container" id="register-container">
         <div>
