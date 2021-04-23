@@ -2,6 +2,8 @@
 Author: Guiller Dalit  <br />
 Last updated: April 22, 2020   <br />
 Reported to: CMPE 172 instructed by Prof. Paul Nguyen <br />
+Individual Weekly Report Link: [Link](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/README.md)
+
 
 ### **CMPE 172 - Starbucks - Weekly Status Reports**
 #### CMPE 172 - Starbucks - Week #1 - April 22, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
