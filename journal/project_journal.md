@@ -1,10 +1,13 @@
-# Uncalledfour Starbucks Journal
+# Uncalled Four Starbucks Journal
 
 ### **CMPE 172 - Starbucks - Weekly Status Reports**
 #### CMPE 172 - Starbucks - Week #1 - April 22, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
 
 ***Starting off the project*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/7e1f9f69b9fbca3b8125e5915e4b9a8e0349e55e) <br />
 For the first-week status report, I started with the Starbucks project by using the Tacos Cloud project in *Spring Boot in Action Fifth Edition by Craig Walls* as my reference. In this code, I pretty much set up the starbucks-api and the starbucks. I wanted to print out the cards created in the starbucks-api that I inserted using Insomnia and display those cards in the starbucks, and so it did. 
+
+***Creating Project Work Board***
+Alex primarily coordinated with other members of the group in scheduling future tasks for the project, organizing them concisely into the Project work board available on the team's Github page. It currently has the parts completed by Guiller and the current tasks of both Alexander and Anh.
 
 ***Adding styles using CSS*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/ee6ea2ce600eb90ea2dd5c2fe8e50a52e234eb3b) <br />
 For the second part of my Starbucks development. I wanted to add more style to the pages. So I used CSS to make the pages similar to starbucks.com. I made the page design as simple as possible. Please see the images below.
