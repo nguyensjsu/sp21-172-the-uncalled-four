@@ -1,0 +1,54 @@
+body{
+    align-self: center;
+    background-size: 100% 100%;
+    align-self: center;
+}
+.top-container {
+    margin-top: 20px;
+    width: 100%;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.starbucks-logo{
+    background-image: url('../images/starbucks_logo.png');
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 10px;
+    
+}
+.top-tabs{
+    flex-direction: row;
+    font-size: large;
+}
+.nav-item{
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+.nav-link{
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+}
+.right-tabs{
+    flex-direction: row;
+    margin-left: 48%;
+}
+.location-logo{
+    background-image: url('../images/location.png');
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    align-self: center;
+    border: 0px;
+}
+
+

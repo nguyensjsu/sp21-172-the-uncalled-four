@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+<html>
+
+<head>
+    <title>Reward Cards</title>
+    <link rel="stylesheet" href="css/reward.css">
+    </style>
+</head>
+
+<body>
+
+    <div class="top-container">
+        <div class="starbucks-logo"> </div>
+        <div class="top-tabs">
+            <ul class="nav-item">
+                <a class="nav-link" th:href="@{/menu}">Orders </a>
+                <a class="nav-link" th:href="@{/starbucksreward}">Cards </a>
+                <a class="nav-link" th:href="@{/starbuckscard}">Gift  </a>
+            </ul>
+        </div>
+        <div class="right-tabs">
+            <ul class="nav-item">
+                <img class="location-logo"></img>
+                <a class="find-store" th:href="@{/map}">Find a Store </a>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+          <h1>Starbucks Cards</h1>
+          <h2>Pay</h2>
+          <h2>Add</h2>
+          <p></p>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+          <h1>Balance</h1>
+          <img class = "starbucks-reward"></img>
+
+        <button type="button">Add Money</button>
+        </div>
+      </div>
+
+</body>
+
+</html>
