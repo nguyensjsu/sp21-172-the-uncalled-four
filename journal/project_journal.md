@@ -44,7 +44,8 @@ Seeing that data are displayed correctly on the menu page, the next step is to c
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/drinks_sql.png?raw=true)
  
-
+**Add UI design of rewards and payment view** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/2b94cc7879c7ac5d920d4a6d762a5d01e2c5ec97) <br />
+Currently, I'm working on the UI of reward view and payment view of the application. However, I just add the structure of the view, I need to style the pages to make it look nice. 
 
 
 
