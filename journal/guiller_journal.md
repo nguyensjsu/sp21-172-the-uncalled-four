@@ -1,4 +1,4 @@
-# Uncalledfour Starbucks - Personal Journal
+# Uncalledfour Starbucks - Guiller's Journal
 Author: Guiller Dalit  <br />
 Last updated: April 22, 2020   <br />
 Reported to: CMPE 172 instructed by Prof. Paul Nguyen <br />
