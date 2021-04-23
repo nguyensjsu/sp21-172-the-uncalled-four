@@ -1,2 +1,7 @@
-# Team Project (Replace with your Team Name and Journal)
+#  Starbucks - The Uncalled Four
+
+### Contributors 
+Alexander Montgomery
+Anh Hoang
+Guiller Dalit
 
