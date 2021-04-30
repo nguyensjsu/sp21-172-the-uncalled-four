@@ -47,6 +47,14 @@ Seeing that data are displayed correctly on the menu page, the next step is to c
 **Add UI design of rewards and payment view** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/2b94cc7879c7ac5d920d4a6d762a5d01e2c5ec97) <br />
 Currently, I'm working on the UI of reward view and payment view of the application. However, I just add the structure of the view, I need to style the pages to make it look nice. 
 
+#### CMPE 172 - Starbucks - Week #2 - April 29, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
+
+***Port Over Cybersource***
+I ported over the information from the Cybersource lab to the project, which will be invaluable for the verification of credit cards on our system for the Cashier app. Many of the cybersource integration can be used from the lab, but some modifications must be made for the project.
+
+[Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/ccd22b76d916fb2d7401fadc124738c6df515aaa)
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-1.png)
 
 
 
