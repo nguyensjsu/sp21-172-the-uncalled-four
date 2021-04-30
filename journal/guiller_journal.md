@@ -46,7 +46,7 @@ Seeing that data are displayed correctly on the menu page, the next step is to c
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/drinks_sql.png?raw=true)
 
-#### CMPE 172 - Starbucks - Week #1 - April 29, 2020
+#### CMPE 172 - Starbucks - Week #2 - April 29, 2020
 
 ***Updating the ERD*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3908699a72c5e0b3709574395ace43ec11d273dd) <br />
 When reviewing the ERD, it seems that there are a couple of tables that can be removed. So the updated version of the ERD is displayed below. 
