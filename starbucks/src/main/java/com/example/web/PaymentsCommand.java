@@ -1,4 +1,4 @@
-package com.example.web;
+/*package com.example.web;
 
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -51,4 +51,4 @@ class PaymentsCommand {
     public String cardexpmon(){return cardexpmon;}
     public String cardexpyear(){return cardexpyear;}
     public String cardcvv(){return cardcvv ;}
-}
+}*/

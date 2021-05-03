@@ -26,6 +26,12 @@ import org.springframework.web.client.RestTemplate;
 import com.example.model.Drink;
 import com.example.model.Drink.Type;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+
 @Slf4j
 @Controller
 @RequestMapping("/")
@@ -41,6 +47,9 @@ public class StarbucksMachineController {
     return drinks.stream().filter(x -> x.getType().equals(type)).collect(Collectors.toList());
   }
 
+  @Autowired
+  JdbcTemplate jdbcTemplate;
+
   // Post Requests
 
   private static void getAllCards() {
@@ -50,19 +59,71 @@ public class StarbucksMachineController {
     String result = restTemplate.getForObject(apiGetAllCards, String.class);
     System.out.println(result);
   }
-
   @GetMapping
   public String getWelcomePage(StartbucksCommand command, HttpSession session, Model model) {
 
     getAllCards();
     return "welcomepage";
   }
+  @GetMapping("/menu")
+  public String getMenu(StartbucksCommand command, HttpSession session, Model model) {
 
+    return "menu";
+  }
+
+  @GetMapping("/starbucks")
+  public String getOrder(StartbucksCommand command, HttpSession session) {
+    getAllCards();
+    return "starbucks";
+  }
+
+  @GetMapping("/starbuckscard")
+  public String getStackbucksCard(StartbucksCommand command, HttpSession session) {
+    getAllCards();
+    return "starbuckscard";
+  }
+
+  @GetMapping("/starbucksreward")
+  public String getStackbucksReward(StartbucksCommand command, HttpSession session) {
+    getAllCards();
+    return "starbucksreward";
+  }
+
+  @PostMapping
+  public String postAction(@Valid @ModelAttribute("command") StartbucksCommand command,
+      @RequestParam(value = "action", required = true) String action, Errors errors, Model model,
+      HttpServletRequest request) {
+    return "welcomepage";
+  }
   @ModelAttribute
   public void addDrinksToModel(Model model) {
 
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",  "Caffe Americano", 3.45, "Americano" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",  "Blonde Roast", 5.45, "BrewedCoffee" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",  "Caffe Misto", 3.45, "BrewedCoffee" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Featured Starbuck Dark Roast Coffee", 3.45, "BrewedCoffee" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Pike Place Roast", 3.45, "BrewedCoffee" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Decaf Pike Place Roast", 3.45, "BrewedCoffee" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Capuccino", 3.45, "Capuccino" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Espresso", 3.45, "EspressoShots" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Espresson Con Panna", 3.45, "EspressoShots" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Flat White", 3.45, "FlatWhite" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Honey Almondmilk Flat White", 3.45, "FlatWhite" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Pistachio Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Caffe Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Cinnamon Dolce Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Starbucks Reserve Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Starbucks Reserve Hazelnut Bianco Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Starbucks Blonde Vanilla Latte", 3.45, "Latte" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Caramel Macchiato", 3.45, "Macchiato" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Espresso Macchiato", 3.45, "Macchiato" );
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Caffe Mocha", 3.45, "Mocha" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"Starbucks Reserve Dark Chocolate Mocha", 3.45, "Mocha" ) ;
+    jdbcTemplate.update("insert into drink ( drink_name, price,  drink_type ) VALUES (?,?,?)",	"White Chocolate Mocha", 3.45, "Mocha" ) ;
+  
+
     List<Drink> drinks = Arrays.asList(
-      
+  
     //  HOT_COFFEE, HOT_TEA, COLD_COFFEE, ICED_TEA, FRAPUCCINO,
         //Sample Drinks Frapfucinno
         new Drink("1", "Coffee", Type.FRAPUCCINO),
@@ -102,38 +163,6 @@ public class StarbucksMachineController {
     for (Type type : types) {
       model.addAttribute(type.toString().toLowerCase(), filterByType(drinks, type));
     }
-  }
-
-  @GetMapping("/menu")
-  public String getMenu(StartbucksCommand command, HttpSession session, Model model) {
-
-
-    return "menu";
-  }
-
-  @GetMapping("/starbucks")
-  public String getOrder(StartbucksCommand command, HttpSession session) {
-    getAllCards();
-    return "starbucks";
-  }
-
-  @GetMapping("/starbuckscard")
-  public String getStackbucksCard(StartbucksCommand command, HttpSession session) {
-    getAllCards();
-    return "starbuckscard";
-  }
-
-  @GetMapping("/starbucksreward")
-  public String getStackbucksReward(StartbucksCommand command, HttpSession session) {
-    getAllCards();
-    return "starbucksreward";
-  }
-
-  @PostMapping
-  public String postAction(@Valid @ModelAttribute("command") StartbucksCommand command,
-      @RequestParam(value = "action", required = true) String action, Errors errors, Model model,
-      HttpServletRequest request) {
-    return "welcomepage";
   }
 
 }
