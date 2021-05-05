@@ -1,4 +1,4 @@
-/*package com.example.web;
+package com.example.web;
 
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -43,7 +43,7 @@ class PaymentsCommand {
     public String cardexpmon(){return cardexpmon;}
     public String cardexpyear(){return cardexpyear;}
     public String cardcvv(){return cardcvv ;}
-<<<<<<< HEAD
+
 
     
     private String orderNumber ;
@@ -54,6 +54,5 @@ class PaymentsCommand {
     private String captureId ;
     private String captureStatus;
 }
-=======
-}*/
->>>>>>> 13286978b5fcc5e491420ff086c5190fbe184a7a
+
+

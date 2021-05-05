@@ -27,26 +27,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-<<<<<<< HEAD
-=======
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-
->>>>>>> 13286978b5fcc5e491420ff086c5190fbe184a7a
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:selenium'
 	testImplementation 'org.seleniumhq.selenium:selenium-remote-driver'
 	testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver'
-<<<<<<< HEAD
-=======
 
->>>>>>> 13286978b5fcc5e491420ff086c5190fbe184a7a
+
 	runtimeOnly 'mysql:mysql-connector-java'
 }
 
