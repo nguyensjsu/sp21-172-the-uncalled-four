@@ -1,9 +1,21 @@
 package com.example.model;
 
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Entity
+@Table
+@Data
+@RequiredArgsConstructor
 public class Card {
 
+    @Id @GeneratedValue
+    private  Long id;
     int cardNumber;
     String firstName;
     String lastName;

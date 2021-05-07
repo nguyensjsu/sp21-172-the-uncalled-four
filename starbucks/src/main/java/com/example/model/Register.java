@@ -3,8 +3,22 @@ package com.example.model;
 import java.sql.Date;
 
 
-public class Register {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Entity
+@Table
+@Data
+@RequiredArgsConstructor
+public class Register {
+    
+    @Id @GeneratedValue
+    private  Long id;
     private int registerID;
     private int employeeID;
     private Date timestamp;
