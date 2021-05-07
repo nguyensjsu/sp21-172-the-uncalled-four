@@ -1,12 +1,12 @@
 # Uncalledfour Starbucks - Guiller's Journal
 Author: Guiller Dalit  <br />
-Last updated: April 29, 2020   <br />
+Last updated: May 6, 2021   <br />
 Reported to: CMPE 172 instructed by Prof. Paul Nguyen <br />
 Individual Weekly Report Link: [Link](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/README.md)
 
 
 ### **CMPE 172 - Starbucks - Weekly Status Reports**
-#### CMPE 172 - Starbucks - Week #1 - April 22, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
+#### CMPE 172 - Starbucks - Week #1 - April 22, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
 
 ***Starting off the project*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/7e1f9f69b9fbca3b8125e5915e4b9a8e0349e55e) <br />
 For the first-week status report, I started with the Starbucks project by using the Tacos Cloud project in *Spring Boot in Action Fifth Edition by Craig Walls* as my reference. In this code, I pretty much set up the starbucks-api and the starbucks. I wanted to print out the cards created in the starbucks-api that I inserted using Insomnia and display those cards in the starbucks, and so it did. 
@@ -46,7 +46,7 @@ Seeing that data are displayed correctly on the menu page, the next step is to c
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/drinks_sql.png?raw=true)
 
-#### CMPE 172 - Starbucks - Week #2 - April 29, 2020
+#### CMPE 172 - Starbucks - Week #2 - April 29, 2021
 
 ***Updating the ERD*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3908699a72c5e0b3709574395ace43ec11d273dd) <br />
 When reviewing the ERD, it seems that there are a couple of tables that can be removed. So the updated version of the ERD is displayed below. 
@@ -156,6 +156,16 @@ Spoon any remaining foam onto the top of your beverage, and enjoy.' ) ;
 
 ```
 
+#### CMPE 172 - Starbucks - Week #3 - May 6, 2021
+
+We have updated on where CRUD behaves in the Starbucks. Before we run SQL scripts on MySQL to create the tables and insert data. This week, we abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/mysql/@entity.png?raw=true)
+
+However, I have encountered a problem with inserting the drinks data into the database. This is error is my main focus, and hopefully, I can fix it by tomorrow. 
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/mysql/error-mysql.png?raw=true)
+
+I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
 
 
 
