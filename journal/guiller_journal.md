@@ -162,7 +162,7 @@ Spoon any remaining foam onto the top of your beverage, and enjoy.' ) ;
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/tasks-guiller.png?raw=true)
 
-We have updated on where CRUD behaves in the Starbucks. Before we run SQL scripts on MySQL to create the tables and insert data. This week, we abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
+I have updated on where CRUD behaves in the Starbucks. Before I run SQL scripts on MySQL to create the tables and insert data. This week, I abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/%40entity.png?raw=true)
 
