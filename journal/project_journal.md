@@ -172,15 +172,16 @@ I was able to create an initial shell for connecting to the database and extract
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-2.png)
 
-***Updated CRUD Approach Redesign Table Creation Using @Entity*** <br />
-We have updated on where CRUD behaves in the Starbucks. Before we run SQL scripts on MySQL to create the tables and insert data. This week, we abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
+***Updated CRUD Approach Redesign Table Creation Using @Entity*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/064ca2ff9822bcfa2a83ca61085c803c814d04af) <br />
+I have updated on where CRUD behaves in the Starbucks. Before I run SQL scripts on MySQL to create the tables and insert data. This week, I abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/%40entity.png?raw=true)
 
-***Updated CRUD Approach Redesign Table Data Insertion jdbcTemplate*** <br />
+***Updated CRUD Approach Redesign Table Data Insertion jdbcTemplate*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/13286978b5fcc5e491420ff086c5190fbe184a7a) <br />
 However, I have encountered a problem with inserting the drinks data into the database. This is error is my main focus, and hopefully, I can fix it by tomorrow. 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/error-mysql.png?raw=true)
 
+***Initial Commit on Kong*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/25638ad6f6525956cccb46c4f49888a0c0bc2236) <br />
 I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
 
 
