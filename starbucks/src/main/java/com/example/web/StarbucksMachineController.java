@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.net.InetAddress;
 
+import java.sql.Connection;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -77,6 +79,11 @@ public class StarbucksMachineController {
     return "starbucks";
   }
 
+  @GetMapping("/starbucksorder")
+  public String placeOrder(StartbucksCommand command, HttpSession session) {
+    return "starbucksorder";
+  }
+
   @GetMapping("/starbuckscard")
   public String getStackbucksCard(StartbucksCommand command, HttpSession session) {
     getAllCards();
@@ -95,6 +102,26 @@ public class StarbucksMachineController {
       HttpServletRequest request) {
     return "welcomepage";
   }
+
+  @ModelAttribute
+  public void addDrinksToModelDB(Model model){
+
+
+    try{
+      Connection connection = startConnection();
+    }
+  }
+
+  public Connection startConnection() throws Exception {
+    try{
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/starbucks", "athh", "cmpe172");
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+    return connection;
+  }
+
   @ModelAttribute
   public void addDrinksToModel(Model model) {
 
