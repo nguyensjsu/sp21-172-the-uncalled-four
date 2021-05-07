@@ -160,10 +160,10 @@ Spoon any remaining foam onto the top of your beverage, and enjoy.' ) ;
 
 We have updated on where CRUD behaves in the Starbucks. Before we run SQL scripts on MySQL to create the tables and insert data. This week, we abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
 
-![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/mysql/@entity.png?raw=true)
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/%40entity.png?raw=true)
 
 However, I have encountered a problem with inserting the drinks data into the database. This is error is my main focus, and hopefully, I can fix it by tomorrow. 
-![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/mysql/error-mysql.png?raw=true)
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/error-mysql.png?raw=true)
 
 I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
 
