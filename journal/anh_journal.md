@@ -23,3 +23,17 @@ Currently, I'm working on the UI of reward view and payment view of the applicat
 
 **Payments UI and validation** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/5899fb17f33e32d1726d643f2f2c89a566ff28b8) <br />
 Currently, I'm continuing working on the view of rewards and payments. Also, I start working on the payment validation. 
+
+### **CMPE 172 - Starbucks - Weekly Status Reports**
+#### CMPE 172 - Starbucks - Week #3 - May 6, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
+
+***TaskBoard-Week3***
+
+![taskboard-anh-3](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-anh-3.png)
+
+**Payments UI and validation** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/596239a9301ec400f60d018317564ed82f77c3a9) <br />
+![paymentview](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/paymentview.png)
+
+The payment view and form validation have been completed. Payment information will be added to database. However, I'm having some issues with Cybersource authorization and still working on it finish it up. Other than that, I will finish the design of the reward later this week. 
+
+On top of that, on the last meeting I discussed with a team member who is working on the drink database of using @Entity annotation to create tables instead of running the scripts in MySQL. 

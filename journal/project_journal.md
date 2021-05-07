@@ -184,4 +184,9 @@ However, I have encountered a problem with inserting the drinks data into the da
 ***Initial Commit on Kong*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/25638ad6f6525956cccb46c4f49888a0c0bc2236) <br />
 I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
 
+***Payment View*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/596239a9301ec400f60d018317564ed82f77c3a9) <br />
+
+![paymentview](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/paymentview.png)
+
+
 
