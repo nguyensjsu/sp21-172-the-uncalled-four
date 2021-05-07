@@ -163,6 +163,13 @@ Spoon any remaining foam onto the top of your beverage, and enjoy.' ) ;
 
 ```
 
+#### CMPE 172 - Starbucks - Week #3 - May 6, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
 
+***Established Connection to Database to Pull Menu items***
+I was able to create an initial shell for connecting to the database and extracting information from its tables to populate the menus. Currently only the connection has been established, but I will continue to update this such that it will populate the html properly. Also created a button that will be used for placing orders on the cashier app.
+
+[Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/bf88f4bd905fca1b79e65ff6d3f1f8ed4db3e749)
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-2.png)
 
 
