@@ -172,12 +172,12 @@ I was able to create an initial shell for connecting to the database and extract
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-2.png)
 
-***Updated CRUD Approach Redesign Table Creation Using @Entity***
+***Updated CRUD Approach Redesign Table Creation Using @Entity*** <br />
 We have updated on where CRUD behaves in the Starbucks. Before we run SQL scripts on MySQL to create the tables and insert data. This week, we abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/%40entity.png?raw=true)
 
-***Updated CRUD Approach Redesign Table Data Insertion jdbcTemplate***
+***Updated CRUD Approach Redesign Table Data Insertion jdbcTemplate*** <br />
 However, I have encountered a problem with inserting the drinks data into the database. This is error is my main focus, and hopefully, I can fix it by tomorrow. 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/error-mysql.png?raw=true)
 
