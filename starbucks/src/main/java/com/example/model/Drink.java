@@ -5,21 +5,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table
-@Data
 @RequiredArgsConstructor
 public class Drink {
 
   @Id @GeneratedValue
   private  Long id;
-  private String drink_name;
-  private double price;
-  private Type drink_type;
+  @Column(nullable = false) private String drink_name;
+  @Column(nullable = false) private double price;
+  @Column(nullable = false) private String drink_type;
   
   public static enum Type {
     BREWED_COFEE, 
@@ -31,4 +31,13 @@ public class Drink {
     EXPRESSO_SHOT,
     LATTE,
   }
+
+  public Drink (String drink_name, double price, String drink_type){
+    super();
+    this.drink_name = drink_name;
+    this.price = price;
+    this.drink_type = drink_type;
+  }
+
+
 }
