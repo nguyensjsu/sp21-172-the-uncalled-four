@@ -43,15 +43,15 @@ import org.springframework.beans.factory.annotation.Value;
 public class PaymentsCommandController {
 
     private static boolean DEBUG = true;
-    // @Value ("${cybersource.apihost}") String apiHost;
-    // @Value ("${cybersource.merchantkeyid}") String merchantKeyId;
-    // @Value ("${cybersource.merchantsecretkey}") String merchantsecretkey;
-    // @Value ("${cybersource.merchantid}") String merchantId;
+    @Value ("${cybersource.apihost}") String apiHost;
+    @Value ("${cybersource.merchantkeyid}") String merchantKeyId;
+    @Value ("${cybersource.merchantsecretkey}") String merchantsecretkey;
+    @Value ("${cybersource.merchantid}") String merchantId;
 
-    String apiHost = "apitest.cybersource.com";
-    String merchantKeyId = "8084313d-ba4c-4135-bc38-9fe5d29ccb4b";
-    String merchantsecretkey = "1MqZkPNXPdEXIcfW2ORRodZ7BN7SCg1Xvr/QScGpZVE=";
-    String merchantId ="anhthoang";
+    // String apiHost = "apitest.cybersource.com";
+    // String merchantKeyId = "8084313d-ba4c-4135-bc38-9fe5d29ccb4b";
+    // String merchantsecretkey = "1MqZkPNXPdEXIcfW2ORRodZ7BN7SCg1Xvr/QScGpZVE=";
+    // String merchantId ="anhthoang";
 
     private CyberSourceAPI api = new CyberSourceAPI();
 
@@ -113,8 +113,8 @@ public class PaymentsCommandController {
 
         CyberSourceAPI.setHost(apiHost);
         CyberSourceAPI.setKey(merchantKeyId);
-        CyberSourceAPI.setHost(merchantsecretkey);
-        CyberSourceAPI.setKey(merchantId);
+        CyberSourceAPI.setSecret(merchantsecretkey);
+        CyberSourceAPI.setMerchant(merchantId);
 
         CyberSourceAPI.debugConfig();
 
@@ -173,6 +173,41 @@ public class PaymentsCommandController {
             model.addAttribute("message", authResponse.message);
             return "addpayment";
         }
+
+        boolean captureValid = true;
+        CaptureRequest capture = new CaptureRequest();
+        CaptureResponse captureResponse = new CaptureResponse();
+        if (authValid){
+            capture.reference = order_num;
+            capture.paymentId = authResponse.id;
+            capture.transactionAmount= "30.00";
+            capture.transactionCurrency = "USD";
+            System.out.println("\n\nCapture Request: " +capture.toJson());
+            captureResponse = api.capture(capture);
+            System.out.println("\n\nCapture Response: "+ captureResponse.toJson());
+            if(!captureResponse.status.equals("PENDING")){
+                captureValid = false;
+                System.out.println(captureResponse.message);
+                model.addAttribute("message", captureResponse.message);
+                return "addpayment";
+            }
+
+        }
+
+
+        /* Render View */
+        if (authValid && captureValid){
+            command.setOrderNumber (order_num);
+            command.setTransactionAmount("30.00");
+            command.setAuthId(authResponse.id);
+            command.setAuthStatus(authResponse.status);
+            command.setCaptureId(captureResponse.id);
+            command.setCaptureStatus(captureResponse.status);
+        }
+
+        repository.save(command);
+        System.out.println("Thank you for your Payment! Your Order Number is :" + order_num);
+        model.addAttribute( "message", "Thank You for Your Payment! Your Order Number is:" + order_num ) ;
 
         // repository.save(command);
         // System.out.println("Thank you for your Payment!");
