@@ -28,6 +28,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -37,6 +39,7 @@ dependencies {
 	testImplementation 'org.testcontainers:selenium'
 	testImplementation 'org.seleniumhq.selenium:selenium-remote-driver'
 	testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver'
+	testImplementation 'org.springframework.amqp:spring-rabbit-test'
 
 
 	runtimeOnly 'mysql:mysql-connector-java'

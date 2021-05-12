@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
@@ -11,14 +12,11 @@
 </head>
 
 <body>
-
     <div class="top-container">
         <div class="starbucks-logo"> </div>
         <div class="top-tabs">
             <ul class="nav-item">
                 <a class="nav-link" th:href="@{/menu}">Menu </a>
-                <a class="nav-link" th:href="@{/starbucksreward}">Rewards </a>
-                <a class="nav-link" th:href="@{/starbuckscard}">Gift Cards </a>
             </ul>
         </div>
         <div class="right-tabs">
@@ -39,7 +37,6 @@
         </div>
     </div>
     <div class="menu-container" id="menu-container">
-
         <div class="menu-title" id="menu-title">
             <div class="title" id="title">
                 <h2>Espresso</h2>
@@ -51,7 +48,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="menu-title" id="menu-title">
             <div class="title" id="title">
@@ -85,23 +81,23 @@
             <div class="orders" id="orders">
                 <h3>Your Orders</h3>
                 <div class="payment-selection">
-
                 </div>
             </div>
             <div class="payment" id="payment">
                 <h3> Select Payment</h3>
                 <div class="payment-selection">
                     <div class=card id="card">
-                        <h3>Card</h3>
+                        <a class="nav-link" th:href="@{/payments}"> Pay with Card </a>
                     </div>
                     <div class=card id="card">
-                        <h3>Reward</h3>
+                        <a class="nav-link" th:href="@{/starbucksreward}">Pay with Reward </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <form name="form" method="post" action="">
         <div class="question-container" id="question-container">
             <div class="question-label" id="question-label">
                 <h4> Have a question?</h4>
@@ -110,12 +106,13 @@
                 <p> We'll get back to you as soon as possible.</p>
             </div>
             <div class="question-box" id="question-box">
-                <input class="question-input" type="text" id="question" name="question" placeholder="How can I get a reward card?">
-                <input class="question-button" type="submit" name="action" id="question-submit" value="Send" >
-               
+                <input class="question-input" id="question-input" type="text" id="question" name="question"
+                    placeholder="How can I get a reward card?" >
+                <input class="question-button" type="submit" name="action" id="send-question" value="Send" class="btn">
             </div>
         </div>
-  
+    </form>
+
 </body>
 
 </html>
