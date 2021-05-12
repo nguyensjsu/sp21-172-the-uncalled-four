@@ -90,31 +90,39 @@ public class CyberSourceAPI {
         resource = "/pts/v2/payments";
         
         payload = "{\n" +
-                "  \"clientReferenceInformation\": {\n" +
-                "    \"code\": \""+req.reference+"\"\n" +
-                "  },\n" +
-                "  \"processingInformation\": {\n" +
-                "    \"commerceIndicator\": \"internet\"\n" +
-                "  },\n" +
-                "  \"orderInformation\": {\n" +
-                "    \"billTo\": {\n" +
-                "      \"name\": \""+req.billToName+"\",\n" +
-                "    },\n" +
-                "    \"amountDetails\": {\n" +
-                "      \"totalAmount\": \""+req.transactionAmount+"\",\n" +
-                "      \"currency\": \""+req.transactionCurrency+"\"\n" +
-                "    }\n" +
-                "  },\n" +
-                "  \"paymentInformation\": {\n" +
-                "    \"card\": {\n" +
-                "      \"expirationYear\": \""+req.cardExpYear+"\",\n" +
-                "      \"number\": \""+req.cardNumber+"\",\n" +
-                "      \"securityCode\": \""+req.cardCVV+"\",\n" +
-                "      \"expirationMonth\": \""+req.cardExpMonth+"\",\n" +
-                "      \"type\": \""+req.cardType+"\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "}";
+        "  \"clientReferenceInformation\": {\n" +
+        "    \"code\": \""+req.reference+"\"\n" +
+        "  },\n" +
+        "  \"processingInformation\": {\n" +
+        "    \"commerceIndicator\": \"internet\"\n" +
+        "  },\n" +
+        "  \"orderInformation\": {\n" +
+        "    \"billTo\": {\n" +
+        "      \"firstName\": \""+req.billToFirstName+"\",\n" +
+        "      \"lastName\": \""+req.billToLastName+"\",\n" +
+        "      \"address1\": \""+req.billToAddress+"\",\n" +
+        "      \"postalCode\": \""+req.billToZipCode+"\",\n" +
+        "      \"locality\": \""+req.billToCity+"\",\n" +
+        "      \"administrativeArea\": \""+req.billToState+"\",\n" +
+        "      \"country\": \"US\",\n" +
+        "      \"phoneNumber\": \""+req.billToPhone+"\",\n" +
+        "      \"email\": \""+req.billToEmail+"\"\n" +
+        "    },\n" +
+        "    \"amountDetails\": {\n" +
+        "      \"totalAmount\": \""+req.transactionAmount+"\",\n" +
+        "      \"currency\": \""+req.transactionCurrency+"\"\n" +
+        "    }\n" +
+        "  },\n" +
+        "  \"paymentInformation\": {\n" +
+        "    \"card\": {\n" +
+        "      \"expirationYear\": \""+req.cardExpYear+"\",\n" +
+        "      \"number\": \""+req.cardNumber+"\",\n" +
+        "      \"securityCode\": \""+req.cardCVV+"\",\n" +
+        "      \"expirationMonth\": \""+req.cardExpMonth+"\",\n" +
+        "      \"type\": \""+req.cardType+"\"\n" +
+        "    }\n" +
+        "  }\n" +
+        "}";
 
         if (DEBUG) System.out.println("\n\nAuth Request: " + req.toJson() ) ;
         AuthResponse response = new AuthResponse() ;
