@@ -37,3 +37,15 @@ Currently, I'm continuing working on the view of rewards and payments. Also, I s
 The payment view and form validation have been completed. Payment information will be added to database. However, I'm having some issues with Cybersource authorization and still working on it finish it up. Other than that, I will finish the design of the reward later this week. 
 
 On top of that, on the last meeting I discussed with a team member who is working on the drink database of using @Entity annotation to create tables instead of running the scripts in MySQL. 
+
+### **CMPE 172 - Starbucks - Weekly Status Reports**
+#### CMPE 172 - Starbucks - Week #4 - May 13 , 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
+
+***TaskBoard-Week3***
+
+![taskboard-anh-4](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-anh-4.png)
+
+**Cybersource Authorization** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/bc388c699b23b9f4014a2d19e59a180fc9e52959) <br />
+[Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/b6c549fcbd98af1557cfe4471a54e826132772d9) <br />
+
+I have the Cybersource authorization completed. Currently, I'm working on Kong API Gateway deployment. I'm having some issues with Docker (Docker service is not running, so I need to fix that before working on Kong API). Other than that, I need to make some changes in the payment view and finish the design of reward. 
