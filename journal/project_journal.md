@@ -210,5 +210,9 @@ These commits are CSS and styles on HTML. <br />
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/backoffice_journal_screenshot.png?raw=true)<br />
 
+***Created static html values***
+[Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3fd9af909a8972010c8b4e88189e44b441f50597)
+For now, we decided to use static html values for the menu. Currently, I am working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. I was running into issues, since this is my first time working in-depth with html and had to read various tutorials on implementing id's and onclick effects.
+
 
 

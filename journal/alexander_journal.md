@@ -36,3 +36,9 @@ I was able to create an initial shell for connecting to the database and extract
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/bf88f4bd905fca1b79e65ff6d3f1f8ed4db3e749)
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-2.png)
+
+#### CMPE 172 - Starbucks - Week #4 - May 13, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
+
+***Created static html values***
+[Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3fd9af909a8972010c8b4e88189e44b441f50597)
+For now, we decided to use static html values for the menu. Currently, I am working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. I was running into issues, since this is my first time working in-depth with html and had to read various tutorials on implementing id's and onclick effects.
