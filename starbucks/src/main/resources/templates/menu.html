@@ -48,7 +48,7 @@
                 <div th:each="drink : ${hot_coffee}">
                     <input name="drinks" type="checkbox" th:value="${drink.id}" />
                     <span th:text="${drink.name}"></span><br />
-                </div>
+                </div>  
             </div>
         </div>
 
@@ -92,16 +92,16 @@
                 <h3> Select Payment</h3>
                 <div class="payment-selection">
                     <div class=card id="card">
-                        <h3>Card</h3>
+                        <a class="find-store" th:href="@{/payments}">Card </a>
                     </div>
                     <div class=card id="card">
-                        <h3>Reward</h3>
+                        <h3>Rewardsadasd</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <form name="form" th:action="@{/question}" th:object="${question}" method="post">
         <div class="question-container" id="question-container">
             <div class="question-label" id="question-label">
                 <h4> Have a question?</h4>
@@ -112,10 +112,10 @@
             <div class="question-box" id="question-box">
                 <input class="question-input" type="text" id="question" name="question" placeholder="How can I get a reward card?">
                 <input class="question-button" type="submit" name="action" id="question-submit" value="Send" >
-               
             </div>
         </div>
-  
+    </form>
+
 </body>
 
 </html>
