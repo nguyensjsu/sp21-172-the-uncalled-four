@@ -12,11 +12,19 @@ public class Sender {
 
     @Autowired
     private Queue queue;
+  
+    public static String question;
+
+    public String getQuestion() {
+        return this.question;
+    }
+    public void setQuestion(String question) {
+		this.question = question;
+	};
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send() {
-        String message = "Hello World!";
-        this.template.convertAndSend(queue.getName(), message);
-        System.out.println(" [x] Sent '" + message + "'");
+        this.template.convertAndSend(queue.getName(), question);
+        System.out.println(" [x] Sent '" + question + "'");
     }
 }

@@ -36,8 +36,8 @@ build:
 
 run:
 	gradle bootRun
-
 jar:
+	./gradlew --args='This string be passed into my.App#main arguments' 
 	gradle bootJar
 
 send: jar

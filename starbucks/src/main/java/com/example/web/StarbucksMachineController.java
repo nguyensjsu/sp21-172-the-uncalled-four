@@ -1,20 +1,11 @@
 package com.example.web;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.InetAddress;
-
-import java.sql.Connection;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,42 +16,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.web.client.RestTemplate;
 
-import com.example.StarbucksApplication;
-//import com.example.backoffice.Receiver;
-//import com.example.backoffice.Sender;
 import com.example.model.Drink;
 import com.example.model.DrinkRepository;
-import com.example.model.Question;
-import com.example.model.Drink.Type;
+import com.example.model.Question; 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.ConfigurableApplicationContext;
-import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping("/")
 public class StarbucksMachineController {
-
- // private final RabbitTemplate rabbitTemplate;
-  //private final Receiver receiver;
-
-  //public StarbucksMachineController(Receiver receiver, RabbitTemplate rabbitTemplate) {
- //   this.receiver = receiver;
- //   this.rabbitTemplate = rabbitTemplate;
- // }
-  //Sender sender = new Sender();
 
   @Autowired
   private DrinkRepository drinkRepository;
@@ -82,7 +48,6 @@ public class StarbucksMachineController {
 
   @GetMapping("/menu")
   public String getMenu(StartbucksCommand command, HttpSession session, Model model) {
-
     return "menu";
   }
 
@@ -120,21 +85,16 @@ public class StarbucksMachineController {
       @RequestParam(value = "action", required = true) String action, Errors errors, Model model,
       HttpServletRequest request) throws InterruptedException, IOException  {
 
-      String command = "make send env=dev"; 
-      String [] envp = { } ; 
-      File dir = new File ("/Users/guillerdalit/Desktop/Workplace/github/sp21-172-the-uncalled-four/spring-rabbitmq-helloworld") ; // this is the directory where the Makefile is
-      String contents[] = dir.list();
-      System.out.println("List of files and directories in the specified directory:");
-      for(int i=0; i<contents.length; i++) {
-         System.out.println(contents[i]);
-      }
-      Process proc = Runtime.getRuntime().exec(command,envp,dir);
-      BufferedReader input = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-      String line=null;
-      while((line=input.readLine()) != null) {
-        System.out.println(line);
-    }
-      proc.waitFor ( ) ;
+      File dir = new File ("/Users/guillerdalit/Desktop/Workplace/github/sp21-172-the-uncalled-four/backofficerabbitmq") ;
+      String command = "make jar"; 
+      Process proc = Runtime.getRuntime().exec(command,null,dir);
+      System.out.println("sending question...");
+      System.out.println(proc.waitFor());
+
+      command = "make send env=dev"; 
+      proc = Runtime.getRuntime().exec(command,null,dir);
+      System.out.println("sending question to rabbitmq localhost...");
+      System.out.println(proc.waitFor());
   
     return "menu";
   }

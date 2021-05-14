@@ -27,6 +27,12 @@ public class SpringRabbitmqHelloworldApplication {
     }
 
     public static void main(String[] args) throws Exception {
+        System.out.println("Gradle command line arguments example");
+        for (String arg : args) {
+            Sender.question = arg;
+            System.out.println("Got argument [" + arg + "]");
+        }
+        System.out.println(Sender.question);
         SpringApplication.run(SpringRabbitmqHelloworldApplication.class, args);
     }
 }
