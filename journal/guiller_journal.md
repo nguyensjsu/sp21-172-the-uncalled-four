@@ -1,6 +1,6 @@
 # Uncalledfour Starbucks - Guiller's Journal
 Author: Guiller Dalit  <br />
-Last updated: May 6, 2021   <br />
+Last updated: May 13, 2021   <br />
 Reported to: CMPE 172 instructed by Prof. Paul Nguyen <br />
 Individual Weekly Report Link: [Link](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/README.md)
 
@@ -190,7 +190,7 @@ And in this commit, I thougt that what if I create a static variable first and s
 
 ***Finalize the looks of backoffice on web***
 At this point I'm running out of ideas on how to tackle this problem. But hopefully I get to think a solution soon.
-These commits are CSS and styles on HTML
+These commits are CSS and styles on HTML. <br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/e48a6e8b7243b408bff2d47d2541a7d1d39686e9)<br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/0dd6807262f7471cee433bc95d5752ece7875302)<br />
 
