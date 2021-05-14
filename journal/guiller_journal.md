@@ -175,10 +175,26 @@ However, I have encountered a problem with inserting the drinks data into the da
 I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
 
 
-
+ #### CMPE 172 - Starbucks - Week #4 - May 13, 2021
  
+***Backoffice***
 
+So far, I'm testing spring-rabbitmq-helloworld as my intial baseline to develop the backoffice. My approach is to run "make send env=dev" in runtime (starbucks project), but I figured that I was running jar file that is already created. So whatever question from customer I send it won't be send because the jar file is already created before hand. At this point, I'm running out of approach and trying whataver idea that comes to mind. 
 
+First, this commit is when I tried sending the question in runtime using exec. <br />
+[Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/6ab8f4dbae3f972b59c310dfa23e7a49d2502acf) <br />
+
+And in this commit, I thougt that what if I create a static variable first and set the question from the user and then create the jar file. Well this approach also didn't work because after setting the question to the variable the project close and create the jar file. Meaning when the file was close the setted variable is gone and then it create the jar file. 
+<br />
+[Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/2234937930c29f945f735b980eee977d3438a417) <br />
+
+***Finalize the looks of backoffice on web***
+At this point I'm running out of ideas on how to tackle this problem. But hopefully I get to think a solution soon.
+These commits are CSS and styles on HTML
+[Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/e48a6e8b7243b408bff2d47d2541a7d1d39686e9)<br />
+[Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/0dd6807262f7471cee433bc95d5752ece7875302)<br />
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/backoffice_journal_screenshot.png?raw=true)<br />
 
 
 
