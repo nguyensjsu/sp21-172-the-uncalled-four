@@ -7,6 +7,11 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 
 import java.sql.Connection;
@@ -24,22 +29,38 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.client.RestTemplate;
 
+import com.example.StarbucksApplication;
+//import com.example.backoffice.Receiver;
+//import com.example.backoffice.Sender;
 import com.example.model.Drink;
 import com.example.model.DrinkRepository;
+import com.example.model.Question;
 import com.example.model.Drink.Type;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ConfigurableApplicationContext;
+import java.util.concurrent.TimeUnit;
+
 @Controller
 @RequestMapping("/")
 public class StarbucksMachineController {
 
-  // Get requests
+ // private final RabbitTemplate rabbitTemplate;
+  //private final Receiver receiver;
 
-  private final String apiGetCard = "http://localhost:8090/card/{num}";
-  private final String apiGetOrder = "http://localhost:8090/order/register/{regid}";
-  private final String apiGetAllOrders = "http://localhost:8090/orders";
+  //public StarbucksMachineController(Receiver receiver, RabbitTemplate rabbitTemplate) {
+ //   this.receiver = receiver;
+ //   this.rabbitTemplate = rabbitTemplate;
+ // }
+  //Sender sender = new Sender();
 
   @Autowired
   private DrinkRepository drinkRepository;
@@ -94,14 +115,38 @@ public class StarbucksMachineController {
       HttpServletRequest request) {
     return "welcomepage";
   }
+  @PostMapping("/question")
+  public String postQuestion(@Valid @ModelAttribute("question") Question question,
+      @RequestParam(value = "action", required = true) String action, Errors errors, Model model,
+      HttpServletRequest request) throws InterruptedException, IOException  {
 
-  public void insertDrinks(String drink_name, double price, String drink_type) {
+      String command = "make send env=dev"; 
+      String [] envp = { } ; 
+      File dir = new File ("/Users/guillerdalit/Desktop/Workplace/github/sp21-172-the-uncalled-four/spring-rabbitmq-helloworld") ; // this is the directory where the Makefile is
+      String contents[] = dir.list();
+      System.out.println("List of files and directories in the specified directory:");
+      for(int i=0; i<contents.length; i++) {
+         System.out.println(contents[i]);
+      }
+      Process proc = Runtime.getRuntime().exec(command,envp,dir);
+      BufferedReader input = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+      String line=null;
+      while((line=input.readLine()) != null) {
+        System.out.println(line);
+    }
+      proc.waitFor ( ) ;
+  
+    return "menu";
+  }
+
+  public void insertDrinks(String drink_name, double price, String drink_type) throws IOException, InterruptedException {
+
     Drink drink = new Drink(drink_name, price, drink_type);
     drinkRepository.save(drink);
   }
 
   @ModelAttribute
-  public void addDrinksToModel(Model model) {
+  public void addDrinksToModel(Model model) throws IOException, InterruptedException {
 
     insertDrinks("Caffe Americano", 3.45, Drink.Type.BREWED_COFEE.name());
     insertDrinks("Blonde Roast", 5.45, Drink.Type.BREWED_COFEE.name());
