@@ -79,6 +79,7 @@ public class PaymentsCommandController {
     public String getAction( @ModelAttribute("command") PaymentsCommand command, 
                             Model model) {
 
+        model.addAttribute("transactionAmount", "$3.91");
         return "addpayment" ;
 
     }
@@ -156,7 +157,7 @@ public class PaymentsCommandController {
         auth.billToZipCode = "12345";
         auth.billToPhone = "4081234567";
         auth.billToEmail= "email@yahoo.com";
-        auth.transactionAmount = "30.00";
+        auth.transactionAmount = "3.91";
         auth.transactionCurrency = "USD";  
         auth.cardNumber = command.cardnum();
         auth.cardExpMonth = months.get(command.cardexpmon());
@@ -187,7 +188,7 @@ public class PaymentsCommandController {
         if (authValid){
             capture.reference = order_num;
             capture.paymentId = authResponse.id;
-            capture.transactionAmount= "30.00";
+            capture.transactionAmount= "3.91";
             capture.transactionCurrency = "USD";
             System.out.println("\n\nCapture Request: " +capture.toJson());
             captureResponse = api.capture(capture);
@@ -205,7 +206,7 @@ public class PaymentsCommandController {
         /* Render View */
         if (authValid && captureValid){
             command.setOrderNumber (order_num);
-            command.setTransactionAmount("30.00");
+            command.setTransactionAmount("3.91");
             command.setAuthId(authResponse.id);
             command.setAuthStatus(authResponse.status);
             command.setCaptureId(captureResponse.id);
