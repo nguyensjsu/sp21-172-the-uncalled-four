@@ -95,10 +95,11 @@ public class StarbucksMachineController {
   public String postAction(@Valid @ModelAttribute("order") Order order,
       @RequestParam(value = "action", required = true) String action, Errors errors, Model model,
       HttpServletRequest request) {
-
-
+      
+      List<String> orderInfo = new ArrayList<String>();
+      orderInfo.add(order.getPrice());
       System.out.println(order.getPrice());
-
+        
     return "menu";
   }
 

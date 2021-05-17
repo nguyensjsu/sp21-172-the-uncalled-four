@@ -134,5 +134,8 @@ label {
   border: 1px dash gray ;
   text-align: center;
 }
+.error-message{
+  color: pink;
+}
 
 

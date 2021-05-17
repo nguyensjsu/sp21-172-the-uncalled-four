@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="top-container">
         <div class="starbucks-logo"> </div>
         <div class="top-tabs">
@@ -38,12 +37,12 @@
             </p>
         </div>
     </div>
-    <form name="form" th:action="@{/order}" th:object="${order}" method="post">
-    
+    <form name="form" th:action="@{/payments}" th:object="${order}" method="post">
+
         <div class="menu-container" id="menu-container">
             <div class="menu-title" id="menu-title">
                 <div class="title" id="title">
-                    <h2>brewedCoffees</h2>
+                    <h2>Brewed Coffees</h2>
                 </div>
                 <div class="menu-list" id="menu-list">
                     <div>
@@ -55,121 +54,14 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-list" id="menu-list">
-                <div th:each="drink : ${hot_coffee}">
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="espresso" type="checkbox" th:value="${drink.id}" onclick="displayOrder('espresso')" />
-                    <div style="margin-left: 25px">
-                        Espresso
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="espressoconpanna" type="checkbox" th:value="${drink.id}" onclick="displayOrder('espressoconpanna')" />
-                    <div style="margin-left: 25px">
-                        Espresso con Panna
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="espressomacchiato" type="checkbox" th:value="${drink.id}" onclick="displayOrder('espressomacchiato')" />
-                    <div style="margin-left: 25px">
-                        Espresso Macchiato
-                    </div>
-                    <span th:text="${drink.name}"></span><br />
-                </div>  
-            </div>
-
-        </div>
-   
-        <div class="menu-container" id="menu-container">
-
-        <div class="menu-title" id="menu-title">
-            <div class="title" id="title">
-                <h2>Teas and Coffees</h2>
-            </div>
-            <div class="menu-list" id="menu-list">
-                <div th:each="drink : ${cold_coffee}">
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caffeamericano" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caffeamericano')" />
-                    <div style="margin-left: 25px">
-                        Caffe Americano
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="blonderoast" type="checkbox" th:value="${drink.id}" onclick="displayOrder('blonderoast')" />
-                    <div style="margin-left: 25px">
-                        Blonde Roast
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caffemisto" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caffemisto')" />
-                    <div style="margin-left: 25px">
-                        Caffe Misto
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="featuredstarbucksdarkroastcoffee" type="checkbox" th:value="${drink.id}" onclick="displayOrder('featuredstarbucksdarkroastcoffee')" />
-                    <div style="margin-left: 25px">
-                        Featured Starbucks Dark Roast Coffee
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="pikeplaceroast" type="checkbox" th:value="${drink.id}" onclick="displayOrder('pikeplaceroast')" />
-                    <div style="margin-left: 25px">
-                        Pike Place Roast
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="decafpikeplaceroast" type="checkbox" th:value="${drink.id}" onclick="displayOrder('decafpikeplaceroast')" />
-                    <div style="margin-left: 25px">
-                        Decaf Pike Place Roast
-                    </div>
-                    <div style="margin-left: 25px">
-                        Cappuccino
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="flatwhite" type="checkbox" th:value="${drink.id}" onclick="displayOrder('flatwhite')" />
-                    <div style="margin-left: 25px">
-                        Flat White
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="honeyalmondmilkflatwhite" type="checkbox" th:value="${drink.id}" onclick="displayOrder('honeyalmondmilkflatwhite')" />
-                    <div style="margin-left: 25px">
-                        Honey Almondmilk Flat White
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caffelatte" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caffelatte')" />
-                    <div style="margin-left: 25px">
-                        Caffe Latte
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="cinnamondolcelatte" type="checkbox" th:value="${drink.id}" onclick="displayOrder('cinnamondolcelatte')" />
-                    <div style="margin-left: 25px">
-                        Cinnamon Dolce Latte
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="starbucksreservelatte" type="checkbox" th:value="${drink.id}" onclick="displayOrder('starbucksreservelatte')" />
-                    <div style="margin-left: 25px">
-                        Starbucks Reserve Latte
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="starbucksreservehazelnutbiancolatte" type="checkbox" th:value="${drink.id}" onclick="displayOrder('starbucksreservehazelnutbiancolatte')" />
-                    <div style="margin-left: 25px">
-                        Starbucks Reserve Hazelnut Bianco Latte
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="starbucksblondevanillalatte" type="checkbox" th:value="${drink.id}" onclick="displayOrder('starbucksblondevanillalatte')" />
-                    <div style="margin-left: 25px">
-                        Starbucks Blonde Vanilla Latte
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caramelmacchiato" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caramelmacchiato')" />
-                    <div style="margin-left: 25px">
-                        Caramel Macchiato
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="espressomacchiato" type="checkbox" th:value="${drink.id}" onclick="displayOrder('espressomacchiato')" />
-                    <div style="margin-left: 25px">
-                        Espresso Macchiato
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caffemocha" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caffemocha')" />
-                    <div style="margin-left: 25px">
-                        Caffe Mocha
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="starbucksreservedarkchocolatemocha" type="checkbox" th:value="${drink.id}" onclick="displayOrder('starbucksreservedarkchocolatemocha')" />
-                    <div style="margin-left: 25px">
-                        Starbucks Reserve Dark Chocolate Mocha
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="whitechocolatemocha" type="checkbox" th:value="${drink.id}" onclick="displayOrder('whitechocolatemocha')" />
-                    <div style="margin-left: 25px">
-                        White Chocolate Mocha
-                    </div>
-                    <span th:text="${drink.name}"></span>
-                    <br />
-                </div>
-            </div>
             <div class="menu-title" id="menu-title">
                 <div class="title" id="title">
-                    <h2>mocha</h2>
+                    <h2>Macchiato</h2>
                 </div>
                 <div class="menu-list" id="menu-list">
                     <div>
-                        <div class="drink-list" th:each="drink : ${mocha}">
-                            <input name="drink" type="checkbox" th:value="${drink.drink_name}" />
+                        <div class="drink-list" th:each="drink : ${macchiato}">
+                            <input name="drink" type="checkbox" th:value="${drink.price}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -178,12 +70,57 @@
             </div>
             <div class="menu-title" id="menu-title">
                 <div class="title" id="title">
-                    <h2>capuccino</h2>
+                    <h2>Capuccino</h2>
                 </div>
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${capuccino}">
-                            <input name="drink" type="checkbox" th:value="${drink.drink_name}" />
+                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-container" id="menu-container">
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>Flat White</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${flat_white}">
+                            <input name="price" type="checkbox" th:value="${drink.price}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>Mocha</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${mocha}">
+                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>Expresso Shot</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${expresso_shot}">
+                            <input name="drink" type="checkbox" th:value="${drink.price}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -216,7 +153,7 @@
                     <h3> Select Payment</h3>
                     <div class="payment-selection">
                         <div class=card id="card">
-                            <input class="question-button"  name="action" type="submit" Value="Check Out with Card"/>
+                            <input class="question-button" name="action" type="submit" Value="Check Out with Card" />
                         </div>
                     <div class=card id="card">
                         <h3>Rewards</h3>
@@ -241,7 +178,6 @@
             </div>
         </div>
     </form>
-
 </body>
 
 </html>

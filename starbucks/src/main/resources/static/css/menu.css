@@ -120,6 +120,7 @@ body{
     color: black;
     background-color: white ;
     font-size: 22px;
+ 
 }
 .menu-list {
     display: flex;
@@ -135,6 +136,7 @@ body{
     width: 100%;
     margin: auto;
     border-bottom: 5px solid #439058;
+    margin-bottom: 10px;
 }
 #title{
     display: flex;
