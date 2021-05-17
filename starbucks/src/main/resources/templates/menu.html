@@ -38,11 +38,22 @@
             </p>
         </div>
     </div>
-    <div class="menu-container" id="menu-container">
-
-        <div class="menu-title" id="menu-title">
-            <div class="title" id="title">
-                <h2>Espresso</h2>
+    <form name="form" th:action="@{/order}" th:object="${order}" method="post">
+    
+        <div class="menu-container" id="menu-container">
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>brewedCoffees</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${brewed_cofee}">
+                            <input name="price" type="checkbox" th:value="${drink.price}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="menu-list" id="menu-list">
                 <div th:each="drink : ${hot_coffee}">
@@ -61,8 +72,10 @@
                     <span th:text="${drink.name}"></span><br />
                 </div>  
             </div>
-        </div>
 
+        </div>
+   
+        <div class="menu-container" id="menu-container">
 
         <div class="menu-title" id="menu-title">
             <div class="title" id="title">
@@ -149,115 +162,61 @@
                     <br />
                 </div>
             </div>
-        </div>
-        <div class="menu-title" id="menu-title">
-            <div class="title" id="title">
-                <h2>Frapuccino</h2>
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>mocha</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${mocha}">
+                            <input name="drink" type="checkbox" th:value="${drink.drink_name}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="menu-list" id="menu-list">
-                <div th:each="drink : ${frapuccino}">
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="strawberryfunnelcakefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('strawberryfunnelcakefrap')" />
-                    <div style="margin-left: 25px">
-                        Strawberry Funnel Cake Frappucino Blended Beverage
+            <div class="menu-title" id="menu-title">
+                <div class="title" id="title">
+                    <h2>capuccino</h2>
+                </div>
+                <div class="menu-list" id="menu-list">
+                    <div>
+                        <div class="drink-list" th:each="drink : ${capuccino}">
+                            <input name="drink" type="checkbox" th:value="${drink.drink_name}" />
+                            <li class="drink-name" th:text="${drink.drink_name}"> </li>
+                            <li class="price" th:text="${drink.price}"> </li>
+                        </div>
                     </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="mochacookiecrumblefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('mochacookiecrumblefrap')" />
-                    <div style="margin-left: 25px">
-                        Mocha Cookie Crumble Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caramelribboncrunchfrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caramelribboncrunchfrap')" />
-                    <div style="margin-left: 25px">
-                        Caramel Ribbon Crunch Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="espressofrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('espressofrap')" />
-                    <div style="margin-left: 25px">
-                        Espresso Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caffevanillafrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caffevanillafrap')" />
-                    <div style="margin-left: 25px">
-                        Caffe Vanilla Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caramelfrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caramelfrap')" />
-                    <div style="margin-left: 25px">
-                        Caramel Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="mochafrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('mochafrap')" />
-                    <div style="margin-left: 25px">
-                        Mocha Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="javachipfrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('javachipfrap')" />
-                    <div style="margin-left: 25px">
-                        Java Chip Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="whitechocolatemochafrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('whitechocolatemochafrap')" />
-                    <div style="margin-left: 25px">
-                        White Chocolate Mocha Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="strawberryfunnelcakecremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('strawberryfunnelcakecremefrap')" />
-                    <div style="margin-left: 25px">
-                        Strawberry Funnel Cake Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="chocolatecookiecrumblefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('chocolatecookiecrumblefrap')" />
-                    <div style="margin-left: 25px">
-                        Chocolate Cookie Crumble Frappucino
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="caramelribboncrunchcremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('caramelribboncrunchcremefrap')" />
-                    <div style="margin-left: 25px">
-                        Caramel Ribbon Crunch Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="strawberrycremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('strawberrycremefrap')" />
-                    <div style="margin-left: 25px">
-                        Strawberry Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="chaicremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('chaicremefrap')" />
-                    <div style="margin-left: 25px">
-                        Chai Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="doublechocolatychipcremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('doublechocolatychipcremefrap')" />
-                    <div style="margin-left: 25px">
-                        Double Chocolaty Chip Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="matchacremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('matchacremefrap')" />
-                    <div style="margin-left: 25px">
-                        Matcha Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="vanillabeancremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('vanillabeancremefrap')" />
-                    <div style="margin-left: 25px">
-                        Vanilla Bean Creme Frappucino Blended Beverage
-                    </div>
-                    <input name="drinks" style="float: left; margin-top: 6px;" id="whitechocolatecremefrap" type="checkbox" th:value="${drink.id}" onclick="displayOrder('whitechocolatecremefrap')" />
-                    <div style="margin-left: 25px">
-                        White Chocolate Creme Frappucino Blended Beverage
-                    </div>
-                    <span th:text="${drink.name}"></span><br />
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="register-container" id="register-container">
-        <div>
-            <h2>Check Out</h2>
+        <div class="register-container" id="register-container">
+            <div>
+                <h2>Check Out</h2>
+            </div>
+            <div class="register" id="register">
+                <div class="orders" id="orders">
+                    <h3>Your Orders</h3>
+                    <div class="payment-selection">
+                    </div>
+                </div>
+                <div class="payment" id="payment">
+                    <h3> Select Payment</h3>
+                    <div class="payment-selection">
+                        <div class=card id="card">
+                            <input class="question-button"  name="action" type="submit" Value="Check Out with Card"/>
+                        </div>
+                        <div class=card id="card">
+                            <h3>Rewardsadasd</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="register" id="register">
-            <div class="orders" id="orders">
-                <h3>Your Orders</h3>
-                <div class="payment-selection">
+    </form>
 
-                </div>
-            </div>
-            <div class="payment" id="payment">
-                <h3> Select Payment</h3>
-                <div class="payment-selection">
-                    <div class=card id="card">
-                        <a class="find-store" th:href="@{/payments}">Card </a>
-                    </div>
-                    <div class=card id="card">
-                        <h3>Rewardsadasd</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <form name="form" th:action="@{/question}" th:object="${question}" method="post">
         <div class="question-container" id="question-container">
             <div class="question-label" id="question-label">
@@ -267,8 +226,9 @@
                 <p> We'll get back to you as soon as possible.</p>
             </div>
             <div class="question-box" id="question-box">
-                <input class="question-input" type="text" id="question" name="question" placeholder="How can I get a reward card?">
-                <input class="question-button" type="submit" name="action" id="question-submit" value="Send" >
+                <input class="question-input" type="text" id="question" name="question"
+                    placeholder="How can I get a reward card?">
+                <input class="question-button" type="submit" name="action" id="question-submit" value="Send">
             </div>
         </div>
     </form>

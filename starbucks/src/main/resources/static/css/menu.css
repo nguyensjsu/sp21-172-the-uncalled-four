@@ -121,8 +121,15 @@ body{
     background-color: white ;
     font-size: 22px;
 }
-#menu-title {
-
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 400px;
+}
+#menu-list {
+    display: flex;
+    justify-content: space-around;
 }
 .title{
     width: 100%;
@@ -133,10 +140,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 ul {
     list-style-type: none;
     font-size: 20px;
+}
+li {
+    height: 50px;
+}
+.price {
+    padding-left: 10px;
+}
+.drink-name {
+    width: 300px;
+}
+.drink-list {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 .register-container {
     width: 70%;

@@ -37,13 +37,13 @@ class PaymentsCommand {
     private String cardexpmon;
     private String cardexpyear;
     private String cardcvv;
+   
  
     public String cardname(){return cardname;}
     public String cardnum(){return cardnum ;}
     public String cardexpmon(){return cardexpmon;}
     public String cardexpyear(){return cardexpyear;}
     public String cardcvv(){return cardcvv ;}
-
 
     
     private String orderNumber ;

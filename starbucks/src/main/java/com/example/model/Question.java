@@ -20,9 +20,19 @@ public class Question {
   @Column(nullable = false) private String question;
   @Column(nullable = false) private String email;
 
+
+	public String getQuestion() {
+		return this.question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
   public Question (String question, String email){
     super();
     this.question = question;
     this.email = email;
   }
+
 }

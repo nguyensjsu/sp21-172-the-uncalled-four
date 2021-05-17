@@ -19,7 +19,27 @@ public class Drink {
   private  Long id;
   @Column(nullable = false) private String drink_name;
   @Column(nullable = false) private double price;
-  @Column(nullable = false) private String drink_type;
+  @Column(nullable = false) private Type drink_type;
+
+  public String getDrink_name() {
+    return this.drink_name;
+  }
+  public void setDrink_name(String drink_name) {
+    this.drink_name = drink_name;
+  }
+  public double getPrice(){
+    return this.price;
+  }
+  public void setPrice(double price){
+    this.price = price;
+  }
+  public Type getType(){
+    return this.drink_type;
+  }
+  public void setType(Type type){
+    this.drink_type = type;
+  }
+
   
   public static enum Type {
     BREWED_COFEE, 
@@ -32,7 +52,9 @@ public class Drink {
     LATTE,
   }
 
-  public Drink (String drink_name, double price, String drink_type){
+  
+
+  public Drink (String drink_name, double price, Type drink_type){
     super();
     this.drink_name = drink_name;
     this.price = price;

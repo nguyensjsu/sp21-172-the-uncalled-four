@@ -110,7 +110,7 @@ public class PaymentsCommandController {
                             Errors errors, Model model, HttpServletRequest request) {
     
         log.info( "Action: " + action ) ;
-        log.info( "Command: " + command ) ;
+        log.info( "Command: " + command.getTransactionAmount() ) ;
 
         CyberSourceAPI.setHost(apiHost);
         CyberSourceAPI.setKey(merchantKeyId);
