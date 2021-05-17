@@ -4,9 +4,6 @@ plugins {
 	id 'java'
 	id 'application'
 }
-application {
-   mainClass.set("com.example.springrabbitmqhelloworld.SpringRabbitmqHelloworldApplication")
- }
 
 group = 'com.example'
 version = '1.0'

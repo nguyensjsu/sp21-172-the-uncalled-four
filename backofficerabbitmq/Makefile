@@ -37,11 +37,10 @@ build:
 run:
 	gradle bootRun
 jar:
-	./gradlew --args='This string be passed into my.App#main arguments' 
 	gradle bootJar
 
 send: jar
-	java -jar build/libs/spring-rabbitmq-helloworld-1.0.jar --spring.profiles.active=$(env),hello,sender
+	java -jar build/libs/spring-rabbitmq-helloworld-1.0.jar --spring.profiles.active=$(env),hello,sender '$(question)'
 
 receive: jar
 	java -jar build/libs/spring-rabbitmq-helloworld-1.0.jar --spring.profiles.active=$(env),hello,receiver

@@ -21,10 +21,10 @@ public class Sender {
     public void setQuestion(String question) {
 		this.question = question;
 	};
-
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    
+    @Scheduled(fixedDelay = 1000, initialDelay = 1000)
     public void send() {
         this.template.convertAndSend(queue.getName(), question);
-        System.out.println(" [x] Sent '" + question + "'");
+        System.out.println(" [x] s Sent '" + question + "'");
     }
 }

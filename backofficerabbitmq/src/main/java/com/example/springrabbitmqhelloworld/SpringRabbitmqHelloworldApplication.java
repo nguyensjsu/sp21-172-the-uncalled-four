@@ -26,13 +26,17 @@ public class SpringRabbitmqHelloworldApplication {
         return new RabbitAmqpTutorialsRunner();
     }
 
+   
     public static void main(String[] args) throws Exception {
-        System.out.println("Gradle command line arguments example");
+       System.out.println("Gradle command line arguments example");
+       String message = "";
         for (String arg : args) {
             Sender.question = arg;
             System.out.println("Got argument [" + arg + "]");
+            message = " " + arg + " ";
         }
-        System.out.println(Sender.question);
+        
+      //  System.out.println(Sender.question);
         SpringApplication.run(SpringRabbitmqHelloworldApplication.class, args);
     }
 }
