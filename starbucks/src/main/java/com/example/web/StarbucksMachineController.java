@@ -128,6 +128,11 @@ public class StarbucksMachineController {
     drinkRepository.save(drink);
   }
 
+  public void displayOrder(String id){
+    String drinkID = id;
+    
+  }
+
   @ModelAttribute
   public void addDrinksToModel(Model model) throws IOException, InterruptedException {
 
