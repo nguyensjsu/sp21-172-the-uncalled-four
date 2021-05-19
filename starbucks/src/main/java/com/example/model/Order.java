@@ -18,13 +18,16 @@ public class Order {
   @Column(nullable = false) private List<String> ingredients;
   @Column(nullable = false) private String price;
   @Column(nullable = false) private String size;
-
+  @Column(nullable = false) private String drinkToString;
+  
   public Order(String orderName, List<String> ingredients) {
       this.orderName = orderName;
       this.ingredients = ingredients;
   }
 
 public Order() {
+
 }
+
 
 }

@@ -20,6 +20,7 @@ public class Drink {
   @Column(nullable = false) private String drink_name;
   @Column(nullable = false) private double price;
   @Column(nullable = false) private Type drink_type;
+  @Column(nullable = false) private String drinkToString;
 
   public String getDrink_name() {
     return this.drink_name;
@@ -39,6 +40,9 @@ public class Drink {
   public void setType(Type type){
     this.drink_type = type;
   }
+  public String getDrinkToString(){
+    return drink_name + "-" + price + "-" + drink_type.name();
+  }
 
   
   public static enum Type {
@@ -52,13 +56,13 @@ public class Drink {
     LATTE,
   }
 
-  
 
   public Drink (String drink_name, double price, Type drink_type){
     super();
     this.drink_name = drink_name;
     this.price = price;
     this.drink_type = drink_type;
+    this.drinkToString = drink_name + "\n" + price + "\n" + drink_type.name() + "\n";
   }
 
 

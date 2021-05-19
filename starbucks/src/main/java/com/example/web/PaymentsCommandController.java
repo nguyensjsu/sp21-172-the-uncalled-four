@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.util.Optional;
 import java.time.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
 import lombok.Setter;
 
+import com.example.model.Drink;
 import com.example.model.Order;
 import com.example.springcybersource.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,7 +57,9 @@ public class PaymentsCommandController {
     // String merchantId ="anhthoang";
 
     private CyberSourceAPI api = new CyberSourceAPI();
+    private String orderName = "0.00";
     private String totalAmount = "0.00";
+    private String orderType = "0.00";
 
 
     private static Map<String,String> months = new HashMap<>();
@@ -115,11 +119,21 @@ public class PaymentsCommandController {
         try {
             log.info( "Action: " + action ) ;
             log.info( "Command: " + command.getTransactionAmount() ) ;
-    
-            if (order.getPrice() != null) {
-                totalAmount = order.getPrice().toString();
+            System.out.println(order.getDrinkToString());
+            
+            String unitOrder = order.getDrinkToString();
+            String[] arrayOrder = unitOrder.split("-");
+        
+            if (order.getDrinkToString() != null) {
+                orderName = arrayOrder[0];
+                totalAmount = arrayOrder[1];
+                orderType = arrayOrder[2];
             }
+            model.addAttribute("ordername", orderName);
             model.addAttribute("transactionAmount", totalAmount);
+            model.addAttribute("ordertype", orderType);
+            model.addAttribute("datetoday", new Date().toString());
+    
     
             CyberSourceAPI.setHost(apiHost);
             CyberSourceAPI.setKey(merchantKeyId);
@@ -210,7 +224,6 @@ public class PaymentsCommandController {
                 }
     
             }
-    
     
             /* Render View */
             if (authValid && captureValid){

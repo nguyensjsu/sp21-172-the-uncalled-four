@@ -119,7 +119,7 @@ public class StarbucksMachineController {
     System.out.println("sending question to rabbitmq localhost...");
     System.out.println(proc.waitFor());
 
-    return "menu";
+    return "redirect:/menu";
   }
 
   public void insertDrinks(String drink_name, double price, Type drink_type)
@@ -138,6 +138,7 @@ public class StarbucksMachineController {
   public void addDrinksToModel(Model model) throws IOException, InterruptedException {
 
     drinkRepository.deleteAllInBatch();
+
     insertDrinks("Caffe Americano", 3.42, Drink.Type.BREWED_COFEE);
     insertDrinks("Blonde Roast", 5.35, Drink.Type.BREWED_COFEE);
     insertDrinks("Caffe Misto", 3.55, Drink.Type.BREWED_COFEE);
@@ -160,7 +161,6 @@ public class StarbucksMachineController {
     insertDrinks("Caffe Mocha", 3.45, Drink.Type.MOCHA);
     insertDrinks("Starbucks Reserve Dark Chocolate Mocha", 3.45, Drink.Type.MOCHA);
     insertDrinks("White Chocolate Mocha", 3.45, Drink.Type.MOCHA);
-
 
     List<Drink> drinks = (List<Drink>) drinkRepository.findAll();
     Type[] types = Drink.Type.values();
