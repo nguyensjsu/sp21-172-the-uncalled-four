@@ -23,20 +23,6 @@ After adding the design, I wanted to map the buttons on the top left of the menu
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/menu.png?raw=true)
 
-***Displaying drinks using array of Strings - first phase*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/b9b303940dd72297d8084d68986823c8b0f1523f) <br />
-To display the menu, I tried using an array of String first to display the data on the menu page. 
-
-![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/drinks_array.png?raw=true)
-
-***Displaying drinks using array of Objects - second phase*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/b9b303940dd72297d8084d68986823c8b0f1523f) <br />
-After understanding a little bit more of how the resources(HTML files) and src(java code) communicate, I replace the string array with a list of objects. 
-
-![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/drinks_list.png?raw=true)
-
-*This the current menu we have.*
-
-![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/menu.png?raw=true)
-
 ***Data Management using MySQL - third phase*** [Table Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/1b7ecbba202c01d1936aa8dd811e271207ec67d2) and [Data Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/c3848f5a0d89359353c0f68b64854f51bbb3c7aa) <br />
 Seeing that data are displayed correctly on the menu page, the next step is to create a table for all the data that the Starbucks project would need. The image below is the Entity Relational Diagram I created. This is not the final ERD, and as we go, we might remove, add, or modify the relationship between the tables. But for now, this is what we have. 
 
@@ -58,110 +44,6 @@ I ported over the information from the Cybersource lab to the project, which wil
 ***Updating the ERD*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3908699a72c5e0b3709574395ace43ec11d273dd) <br />
 When reviewing the ERD, it seems that there are a couple of tables that can be removed. So the updated version of the ERD is displayed below. 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/mysql/starbucks-erd-UPDATED.png?raw=true)
-
-***Drinks Data***
-
-```JSX 
-
--- insert hot coffees
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Caffe Americano', 3.45, 'Americano' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Blonde Roast', 5.45, 'BrewedCoffee' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Caffe Misto', 3.45, 'BrewedCoffee' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Featured Starbuck Dark Roast Coffee', 3.45, 'BrewedCoffee' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Pike Place Roast', 3.45, 'BrewedCoffee' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Decaf Pike Place Roast', 3.45, 'BrewedCoffee' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Capuccino', 3.45, 'Capuccino' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Espresso', 3.45, 'EspressoShots' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Espresson Con Panna', 3.45, 'EspressoShots' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Flat White', 3.45, 'FlatWhite' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Honey Almondmilk Flat White', 3.45, 'FlatWhite' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Pistachio Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Caffe Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Cinnamon Dolce Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Starbucks Reserve Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Starbucks Reserve Hazelnut Bianco Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Starbucks Blonde Vanilla Latte', 3.45, 'Latte' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Caramel Macchiato', 3.45, 'Macchiato' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Espresso Macchiato', 3.45, 'Macchiato' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Caffe Mocha', 3.45, 'Mocha' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('Starbucks Reserve Dark Chocolate Mocha', 3.45, 'Mocha' ) ;
-
-insert into drink ( drink_name, price,  drink_type ) 
-values	('White Chocolate Mocha', 3.45, 'Mocha' ) ;
-
--- insert recipe names for each drink
-
--- source of recipe https://athome.starbucks.com/recipe/espresso-caffe-americano/
-insert into recipe ( recipe_id, drink_id, recipe ) 
-values	(1, 1, 
-'STEP ONE
-Bring water to a boil and pour into your mug.
-STEP TWO
-Prepare 2 shots of espresso.
-• We recommend brewing Starbucks® Espresso Roast via an espresso machine. If you don’t have an espresso machine, you can use a stove-top moka pot to make espresso-like coffee. To learn more, read our stove-pot moka pot guide here.
-• You can also brew Starbucks® Espresso Roast by Nespresso® capsules for authentic café-style espresso.
-STEP THREE
-Slowly pour your 2 shots of espresso into the water and enjoy.' ) ;
-
-insert into recipe ( recipe_id, drink_id, recipe ) 
-values	(2, 2, 
-'STEP ONE
-Prepare 1 shot of Starbucks® Blonde® Espresso Roast by Nespresso® and pour into a mug.
-• If you don’t have a Nespresso machine, you can still make a Vanilla Latte with a stove-top moka pot and Starbucks® Espresso Roast for a strong espresso-like coffee. To learn more, read our stove-pot moka pot guide here.
-STEP TWO
-Froth milk using your preferred method. For more information on how to froth your milk, see our frothing guide here.
-STEP THREE
-Add Starbucks® Vanilla Syrup to your mug of espresso and gently stir in.
-STEP FOUR
-Gently pour your frothed milk into your mug until it’s almost full.
-STEP FIVE
-Spoon any remaining foam onto the top of your beverage, and enjoy.' ) ;
-
-........
-
-
-```
 
 #### CMPE 172 - Starbucks - Week #3 - May 6, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
 
@@ -213,6 +95,11 @@ These commits are CSS and styles on HTML. <br />
 ***Created static html values***
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3fd9af909a8972010c8b4e88189e44b441f50597)
 For now, we decided to use static html values for the menu. Currently, I am working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. I was running into issues, since this is my first time working in-depth with html and had to read various tutorials on implementing id's and onclick effects.
+
+#### CMPE 172 - Starbucks - Week #4 - May 19, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
+
+
+
 
 
 
