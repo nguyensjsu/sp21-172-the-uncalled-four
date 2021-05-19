@@ -96,7 +96,41 @@ These commits are CSS and styles on HTML. <br />
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3fd9af909a8972010c8b4e88189e44b441f50597)
 For now, we decided to use static html values for the menu. Currently, I am working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. I was running into issues, since this is my first time working in-depth with html and had to read various tutorials on implementing id's and onclick effects.
 
-#### CMPE 172 - Starbucks - Week #4 - May 19, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
+#### CMPE 172 - Starbucks - Final Week - May 19, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
+
+### Finalize of What We have Finished
+
+***Cashier's App***
+ * In the Cashier’s App, the app handles the user’s order by prices
+ * The user can also cancel the order by simply going back to the menu. 
+ * Once the customer has decided what drinks to order. The customer can click checkout and it will navigate to the new page for the user to pay along with the receipt. 
+ * The customer’s payment is handled using CyberSource. 
+ 
+***Backoffice Help Desk App***
+ * Our Backoffice runs on Rabbitmq. 
+ * It is located at the bottom right of the menu page. 
+ * Illustration of how Backoffice works below. 
+
+***Online Store***
+ * The application when open will display the Welcome Page. 
+ * The store offers 6-types of coffee. We didn’t really have the intention to check the price of each coffee and display it on the menu, although we have the correct name of the coffee for each type. 
+
+***REST API***
+ * Final design with sample request/response
+
+***Integrations***
+ * There are two integrations in our Starbucks application. 
+ * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. 
+ * Cybersource for customer payment. 
+ 
+***Cloud Deployments***
+**Challenges We Faced.** 
+ * We have tried deploying the application in GKE however we got stuck on a very persistent error. 
+ * First, we thought the problem is one of the yaml files deployed on GKE. 
+ * But after hours of debugging, we figured that it has something to with the Docker image. And so looking through the docker, we found that there’s an error causing the problem. 
+ * And so we updated the MySQL users and privileges. We updated that the ‘user’ the one who's doing the fetch and insert in the application, can now be accessed by any host. We thought that this might be causing the error and we want to remotely access the database. And so we did this. 
+ * However, we still get the same error. So we have updated the docker-compose. yaml many times, yet we still haven’t figured out this error.
+If we know more about how to set up the remote access of MySQL using docker images we could have deployed the Starbucks application on GKE
 
 
 
