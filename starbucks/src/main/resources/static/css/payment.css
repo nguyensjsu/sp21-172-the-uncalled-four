@@ -95,13 +95,39 @@ label {
 .col-50 {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
+  flex-direction: column;
+  display: flex;
   }
   
 .col-75 {
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
 }
-  
+.order-box{
+  border: 1px solid #DBDBDB;
+  background-color:white;
+  align-items: flex-start;
+  list-style-type: none;
+}
+.order-label{
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+h4 {
+  margin-left: 10px;
+}
+.label{
+  font-size: 17px;
+  color: black;
+}
+.label-value{
+  font-size: 17px;
+  color: gray
+}
 
 .col-50,
 .col-75 {
