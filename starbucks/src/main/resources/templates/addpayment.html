@@ -24,14 +24,26 @@
         <div class="fcontainer">
             <div class="row">
                 <div class="col-50">
-
                     <h3>ADD PAYMENT METHOD</h3>
-                    <div class="col-50">
+                    <div class="order-box">
                         <h4>Order total:</h4>
-                        <span th:text="${transactionAmount}" />
+                        <div class="order-label">
+                            <li class="label">Date of Order:  </li>
+                            <li class="label-value" th:text="${datetoday}" />
+                        </div>
+                        <div class="order-label">
+                            <li class="label">Order Name:  </li>
+                            <li class="label-value" th:text="${ordername}" />
+                        </div>
+                        <div class="order-label">
+                            <li class="label">Order Type:  </li>
+                            <li class="label-value" th:text="${ordertype}" />
+                        </div>
+                        <div class="order-label">
+                            <li class="label">Total Amount:  $</li>
+                            <li class="label-value" th:text="${transactionAmount}" />
+                        </div>
                     </div>
-
-
                 </div>
 
                 <div class="col-50">

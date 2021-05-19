@@ -17,7 +17,6 @@
             <ul class="nav-item">
                 <a class="nav-link" th:href="@{/menu}">Menu </a>
                 <a class="nav-link" th:href="@{/starbucksreward}">Rewards </a>
-                <a class="nav-link" th:href="@{/starbuckscard}">Gift Cards </a>
             </ul>
         </div>
         <div class="right-tabs">
@@ -38,7 +37,6 @@
         </div>
     </div>
     <form name="form" th:action="@{/payments}" th:object="${order}" method="post">
-
         <div class="menu-container" id="menu-container">
             <div class="menu-title" id="menu-title">
                 <div class="title" id="title">
@@ -47,7 +45,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${brewed_cofee}">
-                            <input name="price" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -61,7 +59,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${macchiato}">
-                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -75,7 +73,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${capuccino}">
-                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -91,7 +89,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${flat_white}">
-                            <input name="price" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -105,7 +103,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${mocha}">
-                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -120,7 +118,7 @@
                 <div class="menu-list" id="menu-list">
                     <div>
                         <div class="drink-list" th:each="drink : ${expresso_shot}">
-                            <input name="drink" type="checkbox" th:value="${drink.price}" />
+                            <input name="drinkToString" type="checkbox" th:value="${drink.getDrinkToString()}" />
                             <li class="drink-name" th:text="${drink.drink_name}"> </li>
                             <li class="price" th:text="${drink.price}"> </li>
                         </div>
@@ -128,40 +126,26 @@
                 </div>
             </div>
         </div>
-
         <div class="register-container" id="register-container">
             <div>
                 <h2>Check Out</h2>
-    <div class="register-container" id="register-container">
-        <div>
-            <h2>Check Out</h2>
-        </div>
-        <div class="register" id="register">
-            <div class="orders" id="orders">
-                <h3>Your Orders</h3>
-                <div class="payment-selection" id="menu-orders">
-
-                </div>
             </div>
             <div class="register" id="register">
-                <div class="orders" id="orders">
-                    <h3>Your Orders</h3>
-                    <div class="payment-selection">
-                    </div>
-                </div>
-                <div class="payment" id="payment">
-                    <h3> Select Payment</h3>
-                    <div class="payment-selection">
+        
+                <div class="register" id="register">
+                    <div class="payment" id="payment">
+                        <h3> Select Payment</h3>
+                        <div class="payment-selection">
+                            <div class=card id="card">
+                                <input class="checkout-button" name="action" type="submit" Value="Check Out with Card" />
+                            </div>
                         <div class=card id="card">
-                            <input class="question-button" name="action" type="submit" Value="Check Out with Card" />
+                            <h3>Rewards</h3>
                         </div>
-                    <div class=card id="card">
-                        <h3>Rewards</h3>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
 
     <form name="form" th:action="@{/question}" th:object="${question}" method="post">
         <div class="question-container" id="question-container">
