@@ -14,7 +14,7 @@ public class PingController {
 
 	@GetMapping("/ping")
 	public Ping ping() {
-		return new Ping("Starbucks API version 1 is active.");
+		return new Ping("Starbucks API version 2.0 is alive!");
 	}
 
 }
