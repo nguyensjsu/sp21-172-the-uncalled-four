@@ -112,51 +112,62 @@ public class PaymentsCommandController {
     }
     @PostMapping("/payments")
     public String postAction(@Valid @ModelAttribute("command") PaymentsCommand command,  
-                            @RequestParam(value="action", required=true) String action,
-                            @Valid @ModelAttribute("order") Order order,
-                            Errors errors, Model model, HttpServletRequest request) {
-    
+            @RequestParam(value = "action", required = true) String action, @Valid @ModelAttribute("order") Order order,
+            Errors errors, Model model, HttpServletRequest request) {
+
+      
         try {
-            log.info( "Action: " + action ) ;
-            log.info( "Command: " + command.getTransactionAmount() ) ;
-            System.out.println(order.getDrinkToString());
-            
-            String unitOrder = order.getDrinkToString();
-            String[] arrayOrder = unitOrder.split("-");
-        
-            if (order.getDrinkToString() != null) {
-                orderName = arrayOrder[0];
-                totalAmount = arrayOrder[1];
-                orderType = arrayOrder[2];
+
+            log.info("Action: " + action);
+            log.info("Command: " + command.getTransactionAmount());
+    
+            try{
+                String unitOrder = order.getDrinkToString();
+                String[] arrayOrder = unitOrder.split("-");
+                if (arrayOrder != null) {
+                    orderName = arrayOrder[0];
+                    totalAmount = arrayOrder[1];
+                    orderType = arrayOrder[2];
+                }
             }
+            catch (NullPointerException e){
+
+            }
+    
+            System.out.println("arrayOrder");
+            System.out.println(orderName);
+            System.out.println("totalAmount");
+            System.out.println(totalAmount);
+            System.out.println("orderType");
+            System.out.println(orderType);
+
             model.addAttribute("ordername", orderName);
             model.addAttribute("transactionAmount", totalAmount);
             model.addAttribute("ordertype", orderType);
             model.addAttribute("datetoday", new Date().toString());
-    
-    
+
             CyberSourceAPI.setHost(apiHost);
             CyberSourceAPI.setKey(merchantKeyId);
             CyberSourceAPI.setSecret(merchantsecretkey);
             CyberSourceAPI.setMerchant(merchantId);
-    
+
             CyberSourceAPI.debugConfig();
-    
+
             ErrorMessages msgs = new ErrorMessages();
             /*Errors*/
-    
+
             boolean hasErrors= false;
             if (command.cardname().equals(""))   {hasErrors = true; msgs.add("Credit Card Name Required");}
             if (command.cardnum().equals(""))   {hasErrors = true; msgs.add("Credit Card Number Required");}
             if (command.cardexpmon().equals(""))      {hasErrors = true; msgs.add("Credit Card Expiration Month Required");}
             if (command.cardexpyear().equals(""))     {hasErrors = true; msgs.add("Credit Card Expiration Year Required");}
             if (command.cardcvv().equals(""))       {hasErrors = true; msgs.add("Credit Card CVV Required");}
-    
+
             //regex validation
             if (!command.cardnum().matches("\\d{4}-\\d{4}-\\d{4}-\\d{4}")) {hasErrors = true; msgs.add("Invalid Card Number" + command.cardnum());}
             if (!command.cardexpyear().matches("\\d{4}")) {hasErrors = true; msgs.add("Invalid Card Expiration Year" + command.cardexpyear());}
             if (!command.cardcvv().matches("\\d{3}")) {hasErrors = true; msgs.add("Invalid Card CVV"+ command.cardcvv());}
-           
+
             //validate month of year
             if (months.get(command.cardexpmon())==null) {hasErrors = true ; msgs.add("Invalid Card Expiration Month: "+ command.cardexpmon());}
             if (hasErrors){
@@ -164,10 +175,10 @@ public class PaymentsCommandController {
                 model.addAttribute("messages", msgs.getMessages());
                 return "addpayment";
             }
-    
+
             int min = 1239871;
             int max = 9999999;
-    
+
             int random_int = (int) Math.floor(Math.random()*(max-min+1)+min);
             String order_num = String.valueOf(random_int);
             AuthRequest auth = new AuthRequest();
@@ -192,7 +203,7 @@ public class PaymentsCommandController {
                 model.addAttribute("message", "Unsupported Credit Card Type");
                 return "addpayment";
             }
-    
+
             boolean authValid = true;
             AuthResponse authResponse = new AuthResponse();
             System.out.println("\n\nAuth Request: " + auth.toJson());
@@ -204,7 +215,7 @@ public class PaymentsCommandController {
                 model.addAttribute("message", authResponse.message);
                 return "addpayment";
             }
-    
+
             boolean captureValid = true;
             CaptureRequest capture = new CaptureRequest();
             CaptureResponse captureResponse = new CaptureResponse();
@@ -222,9 +233,10 @@ public class PaymentsCommandController {
                     model.addAttribute("message", captureResponse.message);
                     return "addpayment";
                 }
-    
+
             }
-    
+
+
             /* Render View */
             if (authValid && captureValid){
                 command.setOrderNumber (order_num);
@@ -234,11 +246,11 @@ public class PaymentsCommandController {
                 command.setCaptureId(captureResponse.id);
                 command.setCaptureStatus(captureResponse.status);
             }
-    
+
             repository.save(command);
             System.out.println("Thank you for your Payment! Your Order Number is :" + order_num);
             model.addAttribute( "message", "Thank You for Your Payment! Your Order Number is:" + order_num ) ;
-    
+
             // repository.save(command);
             // System.out.println("Thank you for your Payment!");
             // model.addAttribute( "message", "Thank You for Your Payment") ;
@@ -252,6 +264,23 @@ public class PaymentsCommandController {
 
 
        /*
+
+       log.info( "Action: " + action ) ;
+            log.info( "Command: " + command.getTransactionAmount() ) ;
+            System.out.println(order.getDrinkToString());
+            
+            String unitOrder = order.getDrinkToString();
+            String[] arrayOrder = unitOrder.split("-");
+        
+            if (arrayOrder != null) {
+                orderName = arrayOrder[0];
+                totalAmount = arrayOrder[1];
+                orderType = arrayOrder[2];
+            }
+            model.addAttribute("ordername", orderName);
+            model.addAttribute("transactionAmount", totalAmount);
+            model.addAttribute("ordertype", orderType);
+            model.addAttribute("datetoday", new Date().toString());
 import javax.validation.Valid;
 
 import com.example.springcybersource.AuthRequest;

@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  docker-mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=magnolia
+      - MYSQL_DATABASE=uncalledfour
+      - MYSQL_PASSWORD=P@ssW0rd
+
+  starbucks:
+    image: starbucks
+    depends_on:
+      - docker-mysql
+      ports:
+      - 8080:8080
+      environment:
+        - DATABASE_HOST=docker-mysql
+        - DATABASE_USER=user
+        - DATABASE_PASSWORD=P@ssW0rd
+        - DATABASE_NAME=uncalledfour
+        - DATABASE_PORT=3306
+  lb:
+    image: eeacms/haproxy
+    depends_on:
+      - starbucks
+    ports:
+      - "80:5000"
+      - "1936:1936"
+    environment:
+      BACKENDS: "gumball"
+      BACKENDS_PORT: "8080"
+      DNS_ENABLED: "true"
+      COOKIES_ENABLED: "false"
+      LOG_LEVEL: "info"
+    networks:
+      - network
+      
+volumes:
+  schemas:
+    external: false
+      
+networks:
+  network:
+    driver: bridge
