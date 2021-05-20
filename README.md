@@ -15,7 +15,7 @@
   * RabbitMQ
   * Kong API on GKE
 
-## Please see [Journal](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/journal/project_journal.md) for more information.**
+## Please see [Journal](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/journal/project_journal.md) for more information.
 
 ***This file only contains brief explanation on how to run the Starbucks application.***
 
