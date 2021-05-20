@@ -105,23 +105,34 @@ For now, we decided to use static html values for the menu. Currently, I am work
  * The user can also cancel the order by simply going back to the menu. 
  * Once the customer has decided what drinks to order. The customer can click checkout and it will navigate to the new page for the user to pay along with the receipt. 
  * The customer’s payment is handled using CyberSource. 
- 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
+
 ***Backoffice Help Desk App***
  * Our Backoffice runs on Rabbitmq. 
  * It is located at the bottom right of the menu page. 
- * Illustration of how Backoffice works below. 
+ * Illustration of how Backoffice works below.
 
-![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks3.png?raw=true)<br />
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks4.png?raw=true)<br />
 
 ***Online Store***
  * The application when open will display the Welcome Page. 
- * The store offers 6-types of coffee. We didn’t really have the intention to check the price of each coffee and display it on the menu, although we have the correct name of the coffee for each type. 
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/welcomepage.png?raw=true)<br />
 
-![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks3.png?raw=true)<br />
+ * The customer can also go to the **ORIGINAL** Starbucks app to download. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/mobile-application.png?raw=true)<br />
+
+ * And also a information about the CDC Guidelines on how we operate during pandemic. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/cdc.png?raw=true)<br />
+
+ * The store offers 6-types of coffee. We didn’t really have the intention to check the price of each coffee and display it on the menu, although we have the correct name of the coffee for each type. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
 
 ***REST API***
  * Final design with sample request/response
@@ -130,6 +141,7 @@ For now, we decided to use static html values for the menu. Currently, I am work
  * There are two integrations in our Starbucks application. 
  * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. (**See Image above**)
  * Cybersource for customer payment. 
+
  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/transaction.png?raw=true)<br />
  
 ***Cloud Deployments***
@@ -138,7 +150,7 @@ For now, we decided to use static html values for the menu. Currently, I am work
  * We have tried deploying the application in GKE however we got stuck on a very persistent error. 
  * First, we thought the problem is one of the yaml files deployed on GKE. 
  
- ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks5-error.png?raw=true)<br />
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbuck5-error.png?raw=true)<br />
 
  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks6-error.png?raw=true)<br />
  
