@@ -165,7 +165,10 @@ For now, we decided to use static HTML values for the menu. Currently, we are wo
 
 ***Integrations***
  * There are two integrations in our Starbucks application. 
- * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. (**See Image above**)
+ * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
+
  * Cybersource for customer payment. 
 
  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/transaction.png?raw=true)<br />
