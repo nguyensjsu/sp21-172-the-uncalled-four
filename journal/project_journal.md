@@ -157,7 +157,7 @@ For now, we decided to use static HTML values for the menu. Currently, we are wo
     ***Pay Order***
     ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/payorder.png?raw=true)<br />
     ***Clear Order***
-    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/clearorder.png?raw=true)<br />
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/clearorder1.png?raw=true)<br />
     ***Delete Orders***
     ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/deleteorders.png?raw=true)<br />
     ***Delete Cards***
