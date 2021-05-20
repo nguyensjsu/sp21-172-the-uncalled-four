@@ -136,7 +136,32 @@ For now, we decided to use static HTML values for the menu. Currently, we are wo
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
 
 ***REST API***
- * Final design with sample request/response
+ * We have successfully deploy KONG API GATEWAY for starbucks-api. Below are some sample of request/response <br />
+
+    ***Ping***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/ping.png?raw=true)<br />
+    ***New Card***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/newcard.png?raw=true)<br />
+    ***Get Cards***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/getcards.png?raw=true)<br />
+    ***Get Card***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/getcard.png?raw=true)<br />
+    ***Activate Card***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/activatecard.png?raw=true)<br />
+    ***New Order***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/neworder.png?raw=true)<br />
+    ***Get Orders***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/getorders.png?raw=true)<br />
+    ***Get Order***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/getorder.png?raw=true)<br />
+    ***Pay Order***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/payorder.png?raw=true)<br />
+    ***Clear Order***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/clearorder.png?raw=true)<br />
+    ***Delete Orders***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/deleteorders.png?raw=true)<br />
+    ***Delete Cards***
+    ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/kongscreenshots/deletecards.png?raw=true)<br />
 
 ***Integrations***
  * There are two integrations in our Starbucks application. 
@@ -170,7 +195,9 @@ If we know more about how to set up the remote access of MySQL using docker imag
 
 
 **Challenges We Faced on Reward Card Cashier.** 
- * We tried to create valid coupon card or starbucks reward card that generates a code for the customer to use. 
+ * We tried to create valid coupon card or starbucks reward card that generates a code for the customer to use. However, we did not have enough time to finish it. This is what we have for the current view of reward cards. 
+
+  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/reward-current.png?raw=true)<br />
 
 
 
