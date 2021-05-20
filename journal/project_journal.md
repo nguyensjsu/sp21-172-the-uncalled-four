@@ -35,7 +35,8 @@ Currently, we're working on the UI of the rewards view and payment view of the a
 
 #### CMPE 172 - Starbucks - Week #2 - April 29, 2020 
 ***Port Over Cybersource***
-We ported over the information from the Cybersource lab to the project, which will be invaluable for the verification of credit cards on our system for the Cashier app. Many of the CyberSource integration can be used from the lab, but some modifications must be made for the project.
+We ported over the information from the Cybersource lab to the project, which will be invaluable for the verification of credit cards on our system for the 
+app. Many of the CyberSource integration can be used from the lab, but some modifications must be made for the project.
 
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/ccd22b76d916fb2d7401fadc124738c6df515aaa)
 
@@ -106,8 +107,6 @@ For now, we decided to use static HTML values for the menu. Currently, we are wo
  * The user can also cancel the order by simply going back to the menu. 
  * Once the customer has decided what drinks to order. The customer can click checkout and it will navigate to the new page for the user to pay along with the receipt. 
  * The customer’s payment is handled using CyberSource. 
-
-![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks2.png?raw=true)<br />
 
 ***Backoffice Help Desk App***
  * Our Backoffice runs on Rabbitmq. 
