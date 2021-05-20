@@ -111,26 +111,53 @@ For now, we decided to use static html values for the menu. Currently, I am work
  * It is located at the bottom right of the menu page. 
  * Illustration of how Backoffice works below. 
 
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks3.png?raw=true)<br />
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks4.png?raw=true)<br />
+
 ***Online Store***
  * The application when open will display the Welcome Page. 
  * The store offers 6-types of coffee. We didn’t really have the intention to check the price of each coffee and display it on the menu, although we have the correct name of the coffee for each type. 
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/welcomepage.png?raw=true)<br />
+
+![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks3.png?raw=true)<br />
 
 ***REST API***
  * Final design with sample request/response
 
 ***Integrations***
  * There are two integrations in our Starbucks application. 
- * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. 
+ * RabbitMQ for the Backoffice. We choose RabbitMQ for the Backoffice because it is customer question/comments/concerns and we want to make sure we check the questions in person to make sure the customers' questions/comments/concerns are heard by us. (**See Image above**)
  * Cybersource for customer payment. 
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/transaction.png?raw=true)<br />
  
 ***Cloud Deployments***
+
 **Challenges We Faced.** 
  * We have tried deploying the application in GKE however we got stuck on a very persistent error. 
  * First, we thought the problem is one of the yaml files deployed on GKE. 
+ 
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks5-error.png?raw=true)<br />
+
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks6-error.png?raw=true)<br />
+ 
  * But after hours of debugging, we figured that it has something to with the Docker image. And so looking through the docker, we found that there’s an error causing the problem. 
+
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks7-error.png?raw=true)<br />
+ 
  * And so we updated the MySQL users and privileges. We updated that the ‘user’ the one who's doing the fetch and insert in the application, can now be accessed by any host. We thought that this might be causing the error and we want to remotely access the database. And so we did this. 
+ 
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks9-error.png?raw=true)<br />
+
  * However, we still get the same error. So we have updated the docker-compose. yaml many times, yet we still haven’t figured out this error.
 If we know more about how to set up the remote access of MySQL using docker images we could have deployed the Starbucks application on GKE
+
+ ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/starbucks8-error.png?raw=true)<br />
+
+
+**Challenges We Faced on Reward Card Cashier.** 
+ * We tried to create valid coupon card or starbucks reward card that generates a code for the customer to use. 
 
 
 
