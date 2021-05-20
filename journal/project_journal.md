@@ -4,38 +4,38 @@
 #### CMPE 172 - Starbucks - Week #1 - April 22, 2020 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)  <br />
 
 ***Starting off the project*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/7e1f9f69b9fbca3b8125e5915e4b9a8e0349e55e) <br />
-For the first-week status report, I started with the Starbucks project by using the Tacos Cloud project in *Spring Boot in Action Fifth Edition by Craig Walls* as my reference. In this code, I pretty much set up the starbucks-api and the starbucks. I wanted to print out the cards created in the starbucks-api that I inserted using Insomnia and display those cards in the starbucks, and so it did. 
+For the first-week status report, we started with the Starbucks project by using the Tacos Cloud project in *Spring Boot in Action Fifth Edition by Craig Walls* as my reference. In this code, I pretty much set up the starbucks-api and the starbucks. We wanted to print out the cards created in the starbucks-api that I inserted using Insomnia and display those cards in the starbucks, and so it did. 
 
 ***Creating Project Work Board***
 Alex primarily coordinated with other members of the group in scheduling future tasks for the project, organizing them concisely into the Project work board available on the team's Github page. It currently has the parts completed by Guiller and the current tasks of both Alexander and Anh.
 
 ***Adding styles using CSS*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/ee6ea2ce600eb90ea2dd5c2fe8e50a52e234eb3b) <br />
-For the second part of my Starbucks development. I wanted to add more style to the pages. So I used CSS to make the pages similar to starbucks.com. I made the page design as simple as possible. Please see the images below.
+For the second part of my Starbucks development. We wanted to add more style to the pages. So we used CSS to make the pages similar to starbucks.com. We made the page design as simple as possible. Please see the images below.
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/welcome.png?raw=true)
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/menu.png?raw=true)
 
 ***HTML Mappings*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/16e840f693989f6cd7e4a2136bcb4719461aae2d) <br />
-After adding the design, I wanted to map the buttons on the top left of the menu. So when a button is clicked it will navigate to its respected HTML file. For instance, if the user clicks the menu it will go to the menu page. Now the user can navigate through the pages. 
+After adding the design, we wanted to map the buttons on the top left of the menu. So when a button is clicked it will navigate to its respected HTML file. For instance, if the user clicks the menu it will go to the menu page. Now the user can navigate through the pages. 
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/welcome.png?raw=true)
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/menu.png?raw=true)
 
 ***Data Management using MySQL - third phase*** [Table Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/1b7ecbba202c01d1936aa8dd811e271207ec67d2) and [Data Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/c3848f5a0d89359353c0f68b64854f51bbb3c7aa) <br />
-Seeing that data are displayed correctly on the menu page, the next step is to create a table for all the data that the Starbucks project would need. The image below is the Entity Relational Diagram I created. This is not the final ERD, and as we go, we might remove, add, or modify the relationship between the tables. But for now, this is what we have. 
+Seeing that data are displayed correctly on the menu page, the next step is to create a table for all the data that the Starbucks project would need. The image below is the Entity Relational Diagram we created. This is not the final ERD, and as we go, we might remove, add, or modify the relationship between the tables. But for now, this is what we have. 
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/starbucks-erd.png?raw=true)
 
 ![alt text](https://github.com/nguyensjsu/cmpe172-guiller-d/blob/main/project/screenshots/drinks_sql.png?raw=true)
  
 **Add UI design of rewards and payment view** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/2b94cc7879c7ac5d920d4a6d762a5d01e2c5ec97) <br />
-Currently, I'm working on the UI of reward view and payment view of the application. However, I just add the structure of the view, I need to style the pages to make it look nice. 
+Currently, we're working on the UI of the rewards view and payment view of the application. However, we just add the structure of the view, I need to style the pages to make them look nice. 
 
 #### CMPE 172 - Starbucks - Week #2 - April 29, 2020 
 ***Port Over Cybersource***
-I ported over the information from the Cybersource lab to the project, which will be invaluable for the verification of credit cards on our system for the Cashier app. Many of the cybersource integration can be used from the lab, but some modifications must be made for the project.
+We ported over the information from the Cybersource lab to the project, which will be invaluable for the verification of credit cards on our system for the Cashier app. Many of the CyberSource integration can be used from the lab, but some modifications must be made for the project.
 
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/ccd22b76d916fb2d7401fadc124738c6df515aaa)
 
@@ -48,23 +48,23 @@ When reviewing the ERD, it seems that there are a couple of tables that can be r
 #### CMPE 172 - Starbucks - Week #3 - May 6, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
 
 ***Established Connection to Database to Pull Menu items***
-I was able to create an initial shell for connecting to the database and extracting information from its tables to populate the menus. Currently only the connection has been established, but I will continue to update this such that it will populate the html properly. Also created a button that will be used for placing orders on the cashier app.
+We were able to create an initial shell for connecting to the database and extracting information from its tables to populate the menus. Currently, only the connection has been established, but we will continue to update this such that it will populate the HTML properly. Also created a button that will be used for placing orders on the cashier app.
 
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/bf88f4bd905fca1b79e65ff6d3f1f8ed4db3e749)
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/taskboard-alex-2.png)
 
 ***Updated CRUD Approach Redesign Table Creation Using @Entity*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/064ca2ff9822bcfa2a83ca61085c803c814d04af) <br />
-I have updated on where CRUD behaves in the Starbucks. Before I run SQL scripts on MySQL to create the tables and insert data. This week, I abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Strabucks. 
+We have updated on where CRUD behaves in Starbucks. Before I run SQL scripts on MySQL to create the tables and insert data. This week, We abolished that approach. Now when we run Starbucks, it creates the tables before the user opens the web browser. Models use @Entity to create the tables for Starbucks. 
 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/%40entity.png?raw=true)
 
 ***Updated CRUD Approach Redesign Table Data Insertion jdbcTemplate*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/13286978b5fcc5e491420ff086c5190fbe184a7a) <br />
-However, I have encountered a problem with inserting the drinks data into the database. This is error is my main focus, and hopefully, I can fix it by tomorrow. 
+However, we have encountered a problem with inserting the drinks data into the database. This is error is the main focus, and hopefully, we can fix it by tomorrow. 
 ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/error-mysql.png?raw=true)
 
 ***Initial Commit on Kong*** [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/25638ad6f6525956cccb46c4f49888a0c0bc2236) <br />
-I have also initialized the kong in the project. Although I haven't started developing it since I got stuck on the error on MySQL. 
+We have also initialized the Kong in the project. Although we haven't started developing it since the project got stuck on the error on MySQL. 
 
 
 #### CMPE 172 - Starbucks - Week #3 - May 13, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
@@ -75,17 +75,18 @@ I have also initialized the kong in the project. Although I haven't started deve
 
 ***Backoffice***
 
-So far, I'm testing spring-rabbitmq-helloworld as my intial baseline to develop the backoffice. My approach is to run "make send env=dev" in runtime (starbucks project), but I figured that I was running jar file that is already created. So whatever question from customer I send it won't be send because the jar file is already created before hand. At this point, I'm running out of approach and trying whataver idea that comes to mind. 
+So far, we've been testing spring-rabbitmq-helloworld as the initial baseline to develop the Backoffice. The approach is to run "make send env=dev" in runtime (starbucks project), but I figured that I was running the jar file that is already created. So whatever question from the customer that is sent won't be sent to RabbitMQ because the jar file is already created beforehand. At this point, I'm running out of approach and trying whatever idea comes to mind. 
 
 First, this commit is when I tried sending the question in runtime using exec. <br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/6ab8f4dbae3f972b59c310dfa23e7a49d2502acf) <br />
 
-And in this commit, I thougt that what if I create a static variable first and set the question from the user and then create the jar file. Well this approach also didn't work because after setting the question to the variable the project close and create the jar file. Meaning when the file was close the setted variable is gone and then it create the jar file. 
+And in this commit, we thought that what if we create a static variable first and set the question from the user and then create the jar file. Well, this approach also didn't work because after setting the question to the variable the project close and create the jar file. Meaning when the file was closed the set variable is gone and then it creates the jar file without the previous setup.
 <br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/2234937930c29f945f735b980eee977d3438a417) <br />
 
 ***Finalize the looks of backoffice on web***
-At this point I'm running out of ideas on how to tackle this problem. But hopefully I get to think a solution soon.
+At this point we are running out of ideas on how to tackle this problem. But hopefully we get to think of a solution soon.
+
 These commits are CSS and styles on HTML. <br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/e48a6e8b7243b408bff2d47d2541a7d1d39686e9)<br />
 [Commit Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/0dd6807262f7471cee433bc95d5752ece7875302)<br />
@@ -94,7 +95,7 @@ These commits are CSS and styles on HTML. <br />
 
 ***Created static html values***
 [Link](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commit/3fd9af909a8972010c8b4e88189e44b441f50597)
-For now, we decided to use static html values for the menu. Currently, I am working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. I was running into issues, since this is my first time working in-depth with html and had to read various tutorials on implementing id's and onclick effects.
+For now, we decided to use static HTML values for the menu. Currently, we are working on adding the name of the drink to the orders section, but the method isn't fully implemented yet. The project was running into issues since this is our first time working in-depth with HTML and had to read various tutorials on implementing ids and click effects.
 
 #### CMPE 172 - Starbucks - Final Week - May 19, 2021 - All Commits accessible [here](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/commits/main)
 
