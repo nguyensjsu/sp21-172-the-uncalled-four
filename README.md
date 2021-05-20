@@ -15,7 +15,7 @@
   * RabbitMQ
   * Kong API on GKE
 
-**Please see [Journal](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/journal/project_journal.md) for more information.**
+## Please see [Journal](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/journal/project_journal.md) for more information.**
 
 ***This file only contains brief explanation on how to run the Starbucks application.***
 
@@ -27,5 +27,5 @@
   ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/readme2.png?raw=true)
   
   * The cashier app and the online store are in starbucks folder. To run the Starbucks application open starbucks folder on the terminal and type 'gradle bootRun'.
-  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/readme1.png?raw=true) 
+  ![alt text](https://github.com/nguyensjsu/sp21-172-the-uncalled-four/blob/main/screenshots/readme3.png?raw=true) 
 
